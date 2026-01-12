@@ -1,0 +1,56 @@
+services:
+  green-agent:
+    image: ghcr.io/caidao22/petscagent-bench-green-agent:latest
+    container_name: green-agent
+    command: ["--host", "0.0.0.0", "--port", "9001", "--card-url", "http://green-agent:9001"]
+    environment: []
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9001/.well-known/agent-card.json"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 30s
+    depends_on:
+      purple-agent:
+        condition: service_healthy
+    networks:
+      - agent-network
+
+  purple-agent:
+    image: ghcr.io/caidao22/petscagent-bench-purple-agent:latest
+    container_name: purple-agent
+    command: ["--host", "0.0.0.0", "--port", "9002", "--card-url", "http://purple-agent:9002"]
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9002/.well-known/agent-card.json"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 30s
+    networks:
+      - agent-network
+
+  petsc-mcp-server:
+    image: ghcr.io/caidao22/petscagent-bench-petsc-mcp-servers:latest
+    container_name: petsc-mcp-server
+    networks:
+      - agent-network
+
+  client-cli:
+    image: ghcr.io/caidao22/petscagent-bench-client-cli:latest
+    container_name: client-cli
+    command: ["--green-url", "http://green-agent:9001", "--purple-url", "http://purple-agent:9002", "--mcp-server-url", "http://petsc-mcp-server:8080/mcp"]
+    volumes:
+      - ./output:/app/output
+    depends_on:
+      green-agent:
+        condition: service_healthy
+      purple-agent:
+        condition: service_healthy
+    networks:
+      - agent-network
+
+networks:
+  agent-network:
+    driver: bridge
