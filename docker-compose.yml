@@ -1,6 +1,6 @@
 services:
   green-agent:
-    image: ghcr.io/caidao22/petscagent-bench-green-agent:latest
+    image: ghcr.io/caidao22/petscagent-bench-green-agent:dev
     container_name: green-agent
     command: ["--host", "0.0.0.0", "--port", "9001", "--card-url", "http://green-agent:9001"]
     environment: []
@@ -17,11 +17,12 @@ services:
       - agent-network
 
   purple-agent:
-    image: ghcr.io/caidao22/petscagent-bench-purple-agent:latest
+    image: ghcr.io/caidao22/petscagent-bench-purple-agent:dev
     container_name: purple-agent
-    command: ["--host", "0.0.0.0", "--port", "9002", "--card-url", "http://purple-agent:9002"]
+    command: ["--host", "0.0.0.0", "--port", "9002", "--card-url", "http://purple-agent:9002", "--agent-llm", "openai/gpt-5.2"]
     environment:
       - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:9002/.well-known/agent-card.json"]
       interval: 5s
@@ -32,13 +33,13 @@ services:
       - agent-network
 
   petsc-mcp-server:
-    image: ghcr.io/caidao22/petscagent-bench-petsc-mcp-servers:latest
+    image: ghcr.io/caidao22/petscagent-bench-petsc-mcp-servers:dev
     container_name: petsc-mcp-server
     networks:
       - agent-network
 
   client-cli:
-    image: ghcr.io/caidao22/petscagent-bench-client-cli:latest
+    image: ghcr.io/caidao22/petscagent-bench-client-cli:dev
     container_name: client-cli
     command: ["--green-url", "http://green-agent:9001", "--purple-url", "http://purple-agent:9002", "--mcp-server-url", "http://petsc-mcp-server:8080/mcp"]
     volumes:
