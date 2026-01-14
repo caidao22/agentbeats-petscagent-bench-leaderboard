@@ -1,0 +1,22 @@
+{
+  "summary": {
+    "total": 1,
+    "success_count": 1,
+    "failure_count": 0,
+    "avg_time_sec": 18.336929082870483
+  },
+  "results": [
+    {
+      "problem_name": "Rosenbrock_banana_function",
+      "problem_id": "3",
+      "success": true,
+      "time_used_sec": 18.336929082870483,
+      "is_error": false,
+      "error_message": null,
+      "stdout": null,
+      "purple_agent_text": null,
+      "file_path": null,
+      "cli_args": null
+    }
+  ]
+}
