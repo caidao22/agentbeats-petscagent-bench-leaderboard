@@ -3,7 +3,11 @@ services:
     image: ghcr.io/caidao22/petscagent-bench-green-agent:dev
     container_name: green-agent
     command: ["--host", "0.0.0.0", "--port", "9001", "--card-url", "http://green-agent:9001"]
-    environment: []
+    volumes:
+      - ./output:/home/petscagent/petscagent_bench/output
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:9001/.well-known/agent-card.json"]
       interval: 5s
@@ -42,8 +46,6 @@ services:
     image: ghcr.io/caidao22/petscagent-bench-client-cli:dev
     container_name: client-cli
     command: ["--green-url", "http://green-agent:9001", "--purple-url", "http://purple-agent:9002", "--mcp-server-url", "http://petsc-mcp-server:8080/mcp"]
-    volumes:
-      - ./output:/app/output
     depends_on:
       green-agent:
         condition: service_healthy

@@ -66,6 +66,7 @@ jobs:
 
       - name: Copy files to submission directory
         run: |
+            # cp scenario.toml submissions/${{ steps.metadata.outputs.unique_name }}.toml
             cp output/benchmark_summary.json results/${{ steps.metadata.outputs.unique_name }}.json
 
       - name: Determine target repository
