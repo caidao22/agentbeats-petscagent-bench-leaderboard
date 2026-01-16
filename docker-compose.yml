@@ -2,7 +2,7 @@ services:
   green-agent:
     image: ghcr.io/caidao22/petscagent-bench-green-agent:latest
     container_name: green-agent
-    command: ["--host", "0.0.0.0", "--port", "9001", "--card-url", "http://green-agent:9001"]
+    command: ["--host", "0.0.0.0", "--port", "9001", "--card-url", "http://green-agent:9001", "--agent-llm", "gemini/gemini-3-flash-preview"]
     volumes:
       - ./output:/home/petscagent/petscagent_bench/output
     environment:
@@ -23,7 +23,7 @@ services:
   purple-agent:
     image: ghcr.io/caidao22/petscagent-bench-purple-agent:latest
     container_name: purple-agent
-    command: ["--host", "0.0.0.0", "--port", "9002", "--card-url", "http://purple-agent:9002", "--agent-llm", "openai/gpt-5.2"]
+    command: ["--host", "0.0.0.0", "--port", "9002", "--card-url", "http://purple-agent:9002", "--agent-llm", "gemini/gemini-3-flash-preview"]
     environment:
       - GEMINI_API_KEY=${GEMINI_API_KEY}
       - OPENAI_API_KEY=${OPENAI_API_KEY}
