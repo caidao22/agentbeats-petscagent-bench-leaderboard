@@ -1,0 +1,525 @@
+{
+  "agent": "019bb856-c8bf-7390-8c4f-bced52276932",
+  "summary": {
+    "total": 3,
+    "runs_count": 3,
+    "failure_count": 0,
+    "avg_time_sec": 8.562410910924276,
+    "avg_composite_score": 54.35121170872668,
+    "tier_distribution": {
+      "GOLD": 0,
+      "SILVER": 1,
+      "BRONZE": 0,
+      "FAIL": 2
+    }
+  },
+  "results": [
+    {
+      "problem_name": "Rosenbrock_banana_function",
+      "problem_id": "3",
+      "runs": true,
+      "time_used_sec": 7.210660457611084,
+      "compiles": true,
+      "stdout": "  0 TAO,  Function value: 1.,  Residual: 2. \n  1 TAO,  Function value: 0.792707,  Residual: 3.16264 \n  2 TAO,  Function value: 0.717944,  Residual: 5.26067 \n  3 TAO,  Function value: 0.589672,  Residual: 5.24381 \n  4 TAO,  Function value: 0.413674,  Residual: 1.52748 \n  5 TAO,  Function value: 0.337052,  Residual: 2.69916 \n  6 TAO,  Function value: 0.302046,  Residual: 4.55499 \n  7 TAO,  Function value: 0.232596,  Residual: 5.00493 \n  8 TAO,  Function value: 0.145375,  Residual: 0.805388 \n  9 TAO,  Function value: 0.11455,  Residual: 3.79783 \n 10 TAO,  Function value: 0.0778513,  Residual: 4.2558 \n 11 TAO,  Function value: 0.0415758,  Residual: 1.65419 \n 12 TAO,  Function value: 0.0221096,  Residual: 1.79277 \n 13 TAO,  Function value: 0.0167844,  Residual: 3.44358 \n 14 TAO,  Function value: 0.00746336,  Residual: 1.246 \n 15 TAO,  Function value: 0.00228058,  Residual: 0.960482 \n 16 TAO,  Function value: 0.000497552,  Residual: 0.130027 \n 17 TAO,  Function value: 0.000203504,  Residual: 0.635266 \n 18 TAO,  Function value: 7.53297e-06,  Residual: 0.0879162 \n 19 TAO,  Function value: 1.61374e-07,  Residual: 0.000392946 \n 20 TAO,  Function value: 1.17781e-09,  Residual: 0.00125457 \n 21 TAO,  Function value: 1.97358e-10,  Residual: 0.000121473 \n 22 TAO,  Function value: 2.41704e-17,  Residual: 1.03892e-07 \n 23 TAO,  Function value: 6.95528e-25,  Residual: 3.45447e-11 \nOptimization finished. Final solution:\nVec Object: 1 MPI process\n  type: seq\n1.\n1.\n",
+      "stderr": null,
+      "cli_args": "-tao_monitor -tao_gatol 1e-8",
+      "composite_score": 79.29976482567963,
+      "tier": "SILVER",
+      "category_scores": {
+        "correctness": 100.0,
+        "performance": 75.57867908477783,
+        "code_quality": 90.0,
+        "algorithm": 90.0,
+        "petsc": 59.62962962962963
+      },
+      "evaluation_summary": {
+        "total_evaluators": 14,
+        "passed_evaluators": 13,
+        "failed_evaluators": 1,
+        "all_gates_passed": true,
+        "gates_passed": 4,
+        "gates_total": 4
+      },
+      "evaluation_details": [
+        {
+          "name": "compilation",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code compiled successfully"
+        },
+        {
+          "name": "execution",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code executed successfully"
+        },
+        {
+          "name": "memory_safety",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 0.7,
+          "feedback": "Basic memory safety check (valgrind not available)"
+        },
+        {
+          "name": "api_usage",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "All basic PETSc API requirements met"
+        },
+        {
+          "name": "numerical_accuracy",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": true,
+          "score": 1.0,
+          "raw_value": 0.0,
+          "confidence": 1.0,
+          "feedback": "Excellent accuracy: error = 0.00e+00 (threshold: 1.00e-06)"
+        },
+        {
+          "name": "execution_time",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.7557867908477783,
+          "raw_value": 7.210660457611084,
+          "confidence": 1.0,
+          "feedback": "Acceptable performance: 7.211s (5.0s - 15.0s)"
+        },
+        {
+          "name": "error_handling",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": false,
+          "score": 0.3,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Poor error handling: only 0 CHKERRQ calls"
+        },
+        {
+          "name": "parallel_awareness",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.85,
+          "raw_value": null,
+          "confidence": 0.8,
+          "feedback": "Parallel features: Uses PETSC_COMM_WORLD, Parallel-aware sizing"
+        },
+        {
+          "name": "readability",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.9,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The code is exceptionally readable and follows modern PETSc best practices. It uses the correct error-handling macros (PetscCall) and maintains a clear separation between the optimization setup and the mathematical logic. The score is slightly below 10 only because the AppCtx struct is defined but remains unused in the logic, which can slightly confuse a reader looking for context-specific parameters."
+        },
+        {
+          "name": "code_style",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.9,
+          "raw_value": null,
+          "confidence": 0.95,
+          "feedback": "The code demonstrates excellent adherence to modern PETSc programming standards, including the use of the PetscCall macro and proper memory management. It correctly utilizes the Tao interface and follows the standard PETSc boilerplate structure."
+        },
+        {
+          "name": "documentation",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.9,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The documentation is high-quality and follows PETSc conventions. It provides the mathematical definition of the Rosenbrock function and its derivatives, which is crucial for verification. The use of the 'help' string and clear section headers makes the code very accessible. It could only be improved by documenting the 'AppCtx' struct members more explicitly, even if currently simple."
+        },
+        {
+          "name": "algorithm_appropriateness",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.9,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The approach is highly appropriate for the Rosenbrock function, which is a classic non-convex test problem for optimization. Using PETSc/Tao provides a robust framework for handling vector operations and solver management. The choice of TAOLMVM (Limited-memory Variable Metric, a quasi-Newton method) is excellent for this problem because Rosenbrock's 'narrow curved valley' geometry benefits significantly from the second-order information approximated by the BFGS-style updates in LMVM. While the code snippet is truncated at the end, the logic for the objective and gradient calculation is mathematically correct."
+        },
+        {
+          "name": "solver_choice",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.9,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The code correctly identifies and uses the TAO (Toolkit for Advanced Optimization) library, which is the appropriate PETSc component for unconstrained minimization. The LMVM (Limited-Memory Variable Metric) solver is a quasi-Newton method that is highly efficient for the Rosenbrock function as it approximates the Hessian using gradient information, handling the function's characteristic narrow, curved valley much better than simple gradient descent. While the Rosenbrock function is small enough for a full Newton method (TAONLS), LMVM is a robust and standard choice for this class of problem."
+        },
+        {
+          "name": "petsc_best_practices",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.7,
+          "raw_value": null,
+          "confidence": 0.9,
+          "feedback": "The code follows several core PETSc best practices including the use of PetscCall, PetscFunctionBeginUser/Return, and VecSetFromOptions. It correctly separates the user context and uses the Tao solver interface. However, it is incomplete (truncated at the end), and while it declares a PetscViewer, it does not actually use it for output. It also hardcodes the solver type (TAOLMVM) and maximum iterations, which limits runtime flexibility compared to using TaoSetFromOptions()."
+        }
+      ]
+    },
+    {
+      "problem_name": "Advection_PDE",
+      "problem_id": "2",
+      "runs": true,
+      "time_used_sec": 7.914902687072754,
+      "compiles": true,
+      "stdout": "0 TS dt 0.005 time 0.\n1 TS dt 0.005 time 0.005\n2 TS dt 0.005 time 0.01\n3 TS dt 0.005 time 0.015\n4 TS dt 0.005 time 0.02\n5 TS dt 0.005 time 0.025\n6 TS dt 0.005 time 0.03\n7 TS dt 0.005 time 0.035\n8 TS dt 0.005 time 0.04\n9 TS dt 0.005 time 0.045\n10 TS dt 0.005 time 0.05\n11 TS dt 0.005 time 0.055\n12 TS dt 0.005 time 0.06\n13 TS dt 0.005 time 0.065\n14 TS dt 0.005 time 0.07\n15 TS dt 0.005 time 0.075\n16 TS dt 0.005 time 0.08\n17 TS dt 0.005 time 0.085\n18 TS dt 0.005 time 0.09\n19 TS dt 0.005 time 0.095\n20 TS dt 0.005 time 0.1\n21 TS dt 0.005 time 0.105\n22 TS dt 0.005 time 0.11\n23 TS dt 0.005 time 0.115\n24 TS dt 0.005 time 0.12\n25 TS dt 0.005 time 0.125\n26 TS dt 0.005 time 0.13\n27 TS dt 0.005 time 0.135\n28 TS dt 0.005 time 0.14\n29 TS dt 0.005 time 0.145\n30 TS dt 0.005 time 0.15\n31 TS dt 0.005 time 0.155\n32 TS dt 0.005 time 0.16\n33 TS dt 0.005 time 0.165\n34 TS dt 0.005 time 0.17\n35 TS dt 0.005 time 0.175\n36 TS dt 0.005 time 0.18\n37 TS dt 0.005 time 0.185\n38 TS dt 0.005 time 0.19\n39 TS dt 0.005 time 0.195\n40 TS dt 0.005 time 0.2\n41 TS dt 0.005 time 0.205\n42 TS dt 0.005 time 0.21\n43 TS dt 0.005 time 0.215\n44 TS dt 0.005 time 0.22\n45 TS dt 0.005 time 0.225\n46 TS dt 0.005 time 0.23\n47 TS dt 0.005 time 0.235\n48 TS dt 0.005 time 0.24\n49 TS dt 0.005 time 0.245\n50 TS dt 0.005 time 0.25\n51 TS dt 0.005 time 0.255\n52 TS dt 0.005 time 0.26\n53 TS dt 0.005 time 0.265\n54 TS dt 0.005 time 0.27\n55 TS dt 0.005 time 0.275\n56 TS dt 0.005 time 0.28\n57 TS dt 0.005 time 0.285\n58 TS dt 0.005 time 0.29\n59 TS dt 0.005 time 0.295\n60 TS dt 0.005 time 0.3\n61 TS dt 0.005 time 0.305\n62 TS dt 0.005 time 0.31\n63 TS dt 0.005 time 0.315\n64 TS dt 0.005 time 0.32\n65 TS dt 0.005 time 0.325\n66 TS dt 0.005 time 0.33\n67 TS dt 0.005 time 0.335\n68 TS dt 0.005 time 0.34\n69 TS dt 0.005 time 0.345\n70 TS dt 0.005 time 0.35\n71 TS dt 0.005 time 0.355\n72 TS dt 0.005 time 0.36\n73 TS dt 0.005 time 0.365\n74 TS dt 0.005 time 0.37\n75 TS dt 0.005 time 0.375\n76 TS dt 0.005 time 0.38\n77 TS dt 0.005 time 0.385\n78 TS dt 0.005 time 0.39\n79 TS dt 0.005 time 0.395\n80 TS dt 0.005 time 0.4\n81 TS dt 0.005 time 0.405\n82 TS dt 0.005 time 0.41\n83 TS dt 0.005 time 0.415\n84 TS dt 0.005 time 0.42\n85 TS dt 0.005 time 0.425\n86 TS dt 0.005 time 0.43\n87 TS dt 0.005 time 0.435\n88 TS dt 0.005 time 0.44\n89 TS dt 0.005 time 0.445\n90 TS dt 0.005 time 0.45\n91 TS dt 0.005 time 0.455\n92 TS dt 0.005 time 0.46\n93 TS dt 0.005 time 0.465\n94 TS dt 0.005 time 0.47\n95 TS dt 0.005 time 0.475\n96 TS dt 0.005 time 0.48\n97 TS dt 0.005 time 0.485\n98 TS dt 0.005 time 0.49\n99 TS dt 0.005 time 0.495\n100 TS dt 0.005 time 0.5\n101 TS dt 0.005 time 0.505\n102 TS dt 0.005 time 0.51\n103 TS dt 0.005 time 0.515\n104 TS dt 0.005 time 0.52\n105 TS dt 0.005 time 0.525\n106 TS dt 0.005 time 0.53\n107 TS dt 0.005 time 0.535\n108 TS dt 0.005 time 0.54\n109 TS dt 0.005 time 0.545\n110 TS dt 0.005 time 0.55\n111 TS dt 0.005 time 0.555\n112 TS dt 0.005 time 0.56\n113 TS dt 0.005 time 0.565\n114 TS dt 0.005 time 0.57\n115 TS dt 0.005 time 0.575\n116 TS dt 0.005 time 0.58\n117 TS dt 0.005 time 0.585\n118 TS dt 0.005 time 0.59\n119 TS dt 0.005 time 0.595\n120 TS dt 0.005 time 0.6\n121 TS dt 0.005 time 0.605\n122 TS dt 0.005 time 0.61\n123 TS dt 0.005 time 0.615\n124 TS dt 0.005 time 0.62\n125 TS dt 0.005 time 0.625\n126 TS dt 0.005 time 0.63\n127 TS dt 0.005 time 0.635\n128 TS dt 0.005 time 0.64\n129 TS dt 0.005 time 0.645\n130 TS dt 0.005 time 0.65\n131 TS dt 0.005 time 0.655\n132 TS dt 0.005 time 0.66\n133 TS dt 0.005 time 0.665\n134 TS dt 0.005 time 0.67\n135 TS dt 0.005 time 0.675\n136 TS dt 0.005 time 0.68\n137 TS dt 0.005 time 0.685\n138 TS dt 0.005 time 0.69\n139 TS dt 0.005 time 0.695\n140 TS dt 0.005 time 0.7\n141 TS dt 0.005 time 0.705\n142 TS dt 0.005 time 0.71\n143 TS dt 0.005 time 0.715\n144 TS dt 0.005 time 0.72\n145 TS dt 0.005 time 0.725\n146 TS dt 0.005 time 0.73\n147 TS dt 0.005 time 0.735\n148 TS dt 0.005 time 0.74\n149 TS dt 0.005 time 0.745\n150 TS dt 0.005 time 0.75\n151 TS dt 0.005 time 0.755\n152 TS dt 0.005 time 0.76\n153 TS dt 0.005 time 0.765\n154 TS dt 0.005 time 0.77\n155 TS dt 0.005 time 0.775\n156 TS dt 0.005 time 0.78\n157 TS dt 0.005 time 0.785\n158 TS dt 0.005 time 0.79\n159 TS dt 0.005 time 0.795\n160 TS dt 0.005 time 0.8\n161 TS dt 0.005 time 0.805\n162 TS dt 0.005 time 0.81\n163 TS dt 0.005 time 0.815\n164 TS dt 0.005 time 0.82\n165 TS dt 0.005 time 0.825\n166 TS dt 0.005 time 0.83\n167 TS dt 0.005 time 0.835\n168 TS dt 0.005 time 0.84\n169 TS dt 0.005 time 0.845\n170 TS dt 0.005 time 0.85\n171 TS dt 0.005 time 0.855\n172 TS dt 0.005 time 0.86\n173 TS dt 0.005 time 0.865\n174 TS dt 0.005 time 0.87\n175 TS dt 0.005 time 0.875\n176 TS dt 0.005 time 0.88\n177 TS dt 0.005 time 0.885\n178 TS dt 0.005 time 0.89\n179 TS dt 0.005 time 0.895\n180 TS dt 0.005 time 0.9\n181 TS dt 0.005 time 0.905\n182 TS dt 0.005 time 0.91\n183 TS dt 0.005 time 0.915\n184 TS dt 0.005 time 0.92\n185 TS dt 0.005 time 0.925\n186 TS dt 0.005 time 0.93\n187 TS dt 0.005 time 0.935\n188 TS dt 0.005 time 0.94\n189 TS dt 0.005 time 0.945\n190 TS dt 0.005 time 0.95\n191 TS dt 0.005 time 0.955\n192 TS dt 0.005 time 0.96\n193 TS dt 0.005 time 0.965\n194 TS dt 0.005 time 0.97\n195 TS dt 0.005 time 0.975\n196 TS dt 0.005 time 0.98\n197 TS dt 0.005 time 0.985\n198 TS dt 0.005 time 0.99\n199 TS dt 0.005 time 0.995\n200 TS dt 0.005 time 1.\nFinal solution at t=1.0:\nVec Object: 1 MPI process\n  type: seq\n0.00339319\n0.0549322\n0.106254\n0.157157\n0.20744\n0.256904\n0.305354\n0.352599\n0.398452\n0.442733\n0.485267\n0.525885\n0.564429\n0.600744\n0.634689\n0.666129\n0.69494\n0.721008\n0.744231\n0.764517\n0.781785\n0.795968\n0.80701\n0.814867\n0.819508\n0.820915\n0.819082\n0.814017\n0.805739\n0.794281\n0.779688\n0.762018\n0.741341\n0.717739\n0.691303\n0.66214\n0.630363\n0.596098\n0.559481\n0.520656\n0.479777\n0.437003\n0.392505\n0.346458\n0.299044\n0.25045\n0.200867\n0.150491\n0.0995215\n0.0481592\n-0.00339319\n-0.0549322\n-0.106254\n-0.157157\n-0.20744\n-0.256904\n-0.305354\n-0.352599\n-0.398452\n-0.442733\n-0.485267\n-0.525885\n-0.564429\n-0.600744\n-0.634689\n-0.666129\n-0.69494\n-0.721008\n-0.744231\n-0.764517\n-0.781785\n-0.795968\n-0.80701\n-0.814867\n-0.819508\n-0.820915\n-0.819082\n-0.814017\n-0.805739\n-0.794281\n-0.779688\n-0.762018\n-0.741341\n-0.717739\n-0.691303\n-0.66214\n-0.630363\n-0.596098\n-0.559481\n-0.520656\n-0.479777\n-0.437003\n-0.392505\n-0.346458\n-0.299044\n-0.25045\n-0.200867\n-0.150491\n-0.0995215\n-0.0481592\n",
+      "stderr": null,
+      "cli_args": "-ts_type rk -ts_rk_type 4 -ts_monitor -ts_max_steps 1000",
+      "composite_score": 43.90640693682493,
+      "tier": "FAIL",
+      "category_scores": {
+        "correctness": 1.2896145371200977e-13,
+        "performance": 74.17019462585449,
+        "code_quality": 83.44827586206897,
+        "algorithm": 90.0,
+        "petsc": 67.63636363636364
+      },
+      "evaluation_summary": {
+        "total_evaluators": 14,
+        "passed_evaluators": 12,
+        "failed_evaluators": 2,
+        "all_gates_passed": true,
+        "gates_passed": 4,
+        "gates_total": 4
+      },
+      "evaluation_details": [
+        {
+          "name": "compilation",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code compiled successfully"
+        },
+        {
+          "name": "execution",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code executed successfully"
+        },
+        {
+          "name": "memory_safety",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 0.7,
+          "feedback": "Basic memory safety check (valgrind not available)"
+        },
+        {
+          "name": "api_usage",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "All basic PETSc API requirements met"
+        },
+        {
+          "name": "numerical_accuracy",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": false,
+          "score": 1.2896145371200976e-15,
+          "raw_value": 3.428443302962327e-05,
+          "confidence": 1.0,
+          "feedback": "Acceptable accuracy: error = 3.43e-05 (threshold: 1.00e-06)"
+        },
+        {
+          "name": "execution_time",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.7417019462585449,
+          "raw_value": 7.914902687072754,
+          "confidence": 1.0,
+          "feedback": "Acceptable performance: 7.915s (5.0s - 15.0s)"
+        },
+        {
+          "name": "error_handling",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.8,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Good error handling: 24 CHKERRQ calls"
+        },
+        {
+          "name": "parallel_awareness",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.85,
+          "raw_value": null,
+          "confidence": 0.8,
+          "feedback": "Parallel features: Uses PETSC_COMM_WORLD, Parallel-aware sizing"
+        },
+        {
+          "name": "readability",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.9,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The code is exceptionally clean and follows PETSc best practices. It uses standard naming conventions and a logical structure that separates the physics (RHSFunction) from the solver configuration. The inclusion of a user context (AppCtx) is the correct way to handle parameters in PETSc, making the code scalable and readable."
+        },
+        {
+          "name": "code_style",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.8,
+          "raw_value": null,
+          "confidence": 0.95,
+          "feedback": "The code is generally well-written and follows standard PETSc practices, including proper context usage and error handling. However, it uses the deprecated CHKERRQ macro instead of the modern PetscCall, and it lacks the PETSc-standard 'PetscFunctionBegin' and 'PetscFunctionReturn' macros for stack tracing."
+        },
+        {
+          "name": "documentation",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.8,
+          "raw_value": null,
+          "confidence": 0.95,
+          "feedback": "The code is well-documented for a small-scale example. It includes a high-level summary of the physics and numerical methods at the top, clear struct definitions, and step-by-step comments for the PETSc workflow. While the RHSFunction has a signature description, it lacks standard Doxygen-style parameter descriptions, and the main function lacks a header. However, the logic for the upwind scheme and periodic boundaries is clearly explained."
+        },
+        {
+          "name": "algorithm_appropriateness",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.9,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The approach is highly appropriate for the problem requirements. Using PETSc's TS (Time Stepper) library is the standard way to solve ODEs/PDEs in this framework. The first-order upwind scheme is the correct choice for a basic advection problem as it ensures numerical stability for c > 0, and the periodic boundary conditions are correctly handled via the modulo operator. The use of a context struct (AppCtx) to pass parameters to the RHS function follows PETSc best practices. However, the code snippet is truncated at the end, and for high-performance scaling, one would typically use DMDA for grid management rather than raw vectors."
+        },
+        {
+          "name": "solver_choice",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.9,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The code correctly identifies the problem as a time-dependent partial differential equation and utilizes PETSc's TS (Time Stepper) library, which is the appropriate high-level abstraction for ODEs and PDEs. The implementation uses an explicit RHSFunction formulation, which is standard for first-order upwind discretization of advection. While the code snippet cuts off before the specific TS type is set (e.g., TSRK or TSEULER), the structural choice of TS is correct. For this linear problem, an explicit method like Runge-Kutta is generally preferred over implicit methods unless the CFL condition is extremely restrictive."
+        },
+        {
+          "name": "petsc_best_practices",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": false,
+          "score": 0.4,
+          "raw_value": null,
+          "confidence": 0.95,
+          "feedback": "The code demonstrates basic PETSc functionality but fails to adhere to several high-level best practices. While it correctly uses the TS (Time Stepping) context and Vec objects, it lacks parallel scalability because it does not use DMDA for the 1D grid management. The RHSFunction uses manual indexing and modulo operators for periodic boundaries, which is inefficient and prevents the code from running in parallel. Furthermore, the code hardcodes parameters like 'n' and 't_final' rather than using PetscOptionsGetReal/Int, limiting runtime flexibility. The error handling uses the deprecated CHKERRQ macro instead of the modern PetscCall. Finally, the code is incomplete (truncated at the end)."
+        }
+      ]
+    },
+    {
+      "problem_name": "Robertson_ODE",
+      "problem_id": "1",
+      "runs": true,
+      "time_used_sec": 10.56166958808899,
+      "compiles": true,
+      "stdout": "** PETSc DEPRECATION WARNING ** : the option -ts_dt is deprecated as of version 3.25 and will be removed in a future release.\n   Use the option -ts_time_step instead. (Silence this warning with -options_suppress_deprecated_warnings)\nSolution at t=100:\nVec Object: 1 MPI process\n  type: seq\n0.614035\n6.0949e-06\n0.385959\n",
+      "stderr": null,
+      "cli_args": "-ts_type cn -ts_dt 1e-3 -ts_adapt_type basic",
+      "composite_score": 39.84746336367547,
+      "tier": "FAIL",
+      "category_scores": {
+        "correctness": 0.0,
+        "performance": 68.87666082382202,
+        "code_quality": 76.89655172413794,
+        "algorithm": 70.0,
+        "petsc": 74.81481481481481
+      },
+      "evaluation_summary": {
+        "total_evaluators": 14,
+        "passed_evaluators": 10,
+        "failed_evaluators": 4,
+        "all_gates_passed": true,
+        "gates_passed": 4,
+        "gates_total": 4
+      },
+      "evaluation_details": [
+        {
+          "name": "compilation",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code compiled successfully"
+        },
+        {
+          "name": "execution",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code executed successfully"
+        },
+        {
+          "name": "memory_safety",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 0.7,
+          "feedback": "Basic memory safety check (valgrind not available)"
+        },
+        {
+          "name": "api_usage",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "All basic PETSc API requirements met"
+        },
+        {
+          "name": "numerical_accuracy",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": false,
+          "score": 0.0,
+          "raw_value": 0.005230394481484237,
+          "confidence": 1.0,
+          "feedback": "Poor accuracy: error = 5.23e-03 (threshold: 1.00e-06)"
+        },
+        {
+          "name": "execution_time",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.6887666082382202,
+          "raw_value": 10.56166958808899,
+          "confidence": 1.0,
+          "feedback": "Acceptable performance: 10.562s (5.0s - 15.0s)"
+        },
+        {
+          "name": "error_handling",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.8,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Good error handling: 40 CHKERRQ calls"
+        },
+        {
+          "name": "parallel_awareness",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.85,
+          "raw_value": null,
+          "confidence": 0.8,
+          "feedback": "Parallel features: Uses PETSC_COMM_WORLD, Parallel-aware sizing"
+        },
+        {
+          "name": "readability",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.9,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The code is exceptionally clean and adheres to PETSc's idiomatic C style. It uses standard naming conventions and follows the logical progression of a typical TS (Time Stepper) application. The only minor detractions are the lack of inline comments for the Jacobian derivation and the use of the legacy CHKERRQ macro instead of the modern PetscCall."
+        },
+        {
+          "name": "code_style",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.8,
+          "raw_value": null,
+          "confidence": 0.95,
+          "feedback": "The code demonstrates a strong understanding of the PETSc API and generally follows its idioms, such as using PetscErrorCode and the CHKERRQ macro. However, it uses an outdated error handling style (CHKERRQ) instead of the modern PetscCall, and the indentation/spacing is inconsistent with the official PETSc style guide."
+        },
+        {
+          "name": "documentation",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": false,
+          "score": 0.6,
+          "raw_value": null,
+          "confidence": 0.95,
+          "feedback": "The code includes a helpful header describing the mathematical model (Robertson ODE) and a few inline comments explaining Jacobian construction and solver tolerances. However, it lacks formal function-level documentation (Doxygen style) for IFunction and IJacobian, which is standard for PETSc examples. The main function logic is clear but relies on the reader's familiarity with PETSc API rather than explicit documentation of the setup steps."
+        },
+        {
+          "name": "algorithm_appropriateness",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.8,
+          "raw_value": null,
+          "confidence": 0.95,
+          "feedback": "The Robertson problem is a classic benchmark for stiff ODE solvers. Using PETSc's TS (Time Stepper) framework is an excellent choice as it provides robust implicit solvers. The implementation uses an implicit formulation (IFunction/IJacobian), which is necessary because the system is extremely stiff due to the reaction rates (10^4 and 3*10^7). However, the prompt specifically requested the Crank-Nicolson (CN) method. While CN is A-stable, it is not L-stable and can exhibit oscillations for very stiff problems like Robertson. A better choice for this specific problem would be a BDF (Backward Differentiation Formula) or a Rosenbrock-type method (e.g., TSROS). Additionally, the use of a fixed time step to reach t=100 in under 1000 steps might be challenging for CN without adaptive time-stepping, which PETSc handles well if configured."
+        },
+        {
+          "name": "solver_choice",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": false,
+          "score": 0.6,
+          "raw_value": null,
+          "confidence": 0.95,
+          "feedback": "The code correctly identifies TS (Time Stepping) as the top-level solver and uses Crank-Nicolson (TSCN). However, the Robertson problem is a classic 'stiff' ODE system. While CN is implicit and stable, it is not L-stable and can exhibit oscillations for stiff problems. Furthermore, the requirement to solve up to t=100 in under 1000 steps is extremely difficult for a fixed-step or non-adaptive second-order method like CN because the Robertson problem has timescales spanning several orders of magnitude. A BDF (Backward Differentiation Formula) or Rosenbrock method with adaptive time-stepping is the standard industry choice for this specific problem."
+        },
+        {
+          "name": "petsc_best_practices",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": false,
+          "score": 0.6,
+          "raw_value": null,
+          "confidence": 0.9,
+          "feedback": "The code demonstrates good low-level PETSc practices such as using VecGetArrayRead for memory safety and correctly implementing the IJacobian with the shift parameter 'a'. However, it lacks high-level flexibility. It uses the legacy CHKERRQ macro instead of the modern PetscCall. The main function is truncated, but the provided callbacks do not show usage of PetscOptions to allow users to modify the constants (k1, k2, k3) at runtime. Additionally, it uses a dense matrix approach (MatSetValues with 3x3) which is fine for this ODE but doesn't demonstrate scalability practices."
+        }
+      ]
+    }
+  ]
+}
