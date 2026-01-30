@@ -20,8 +20,8 @@ jobs:
             api_base_url: ""
             purple_id: "019bc7e4-c94c-7f73-86a3-edb2d6affc73"
           - name: "claudeopu45"
-            purple_llm: "openai/claudeopu45"
-            api_base_url: "https://apps-dev.inside.anl.gov/argoapi/v1"
+            purple_llm: "openai/google-claude-45-opus"
+            api_base_url: "https://api.asksage.anl.gov/server/v1"
             purple_id: "019c10bb-6ee1-71e1-bc40-a606ebb7e9e0"
 
     steps:
