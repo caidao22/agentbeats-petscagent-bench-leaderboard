@@ -1,0 +1,132 @@
+{
+  "agent": "019c10bb-6ee1-71e1-bc40-a606ebb7e9e0",
+  "summary": {
+    "total": 6,
+    "runs_count": 0,
+    "failure_count": 6,
+    "avg_time_sec": 2.232529401779175,
+    "avg_composite_score": 0.0,
+    "tier_distribution": {
+      "GOLD": 0,
+      "SILVER": 0,
+      "BRONZE": 0,
+      "FAIL": 6
+    }
+  },
+  "results": [
+    {
+      "problem_name": "Rosenbrock_banana_function",
+      "problem_id": "3",
+      "runs": false,
+      "time_used_sec": 1.8927583694458008,
+      "compiles": false,
+      "stdout": null,
+      "stderr": null,
+      "cli_args": null,
+      "compile_stdout": null,
+      "compile_stderr": null,
+      "composite_score": 0.0,
+      "tier": "FAIL",
+      "category_scores": null,
+      "evaluation_summary": {
+        "error": "Could not parse purple agent response. Probably failed to generate the code."
+      },
+      "evaluation_details": null
+    },
+    {
+      "problem_name": "Advection_PDE",
+      "problem_id": "2",
+      "runs": false,
+      "time_used_sec": 1.3756258487701416,
+      "compiles": false,
+      "stdout": null,
+      "stderr": null,
+      "cli_args": null,
+      "compile_stdout": null,
+      "compile_stderr": null,
+      "composite_score": 0.0,
+      "tier": "FAIL",
+      "category_scores": null,
+      "evaluation_summary": {
+        "error": "Could not parse purple agent response. Probably failed to generate the code."
+      },
+      "evaluation_details": null
+    },
+    {
+      "problem_name": "DarcyFlow2D_Steady",
+      "problem_id": "6",
+      "runs": false,
+      "time_used_sec": 1.5111534595489502,
+      "compiles": false,
+      "stdout": null,
+      "stderr": null,
+      "cli_args": null,
+      "compile_stdout": null,
+      "compile_stderr": null,
+      "composite_score": 0.0,
+      "tier": "FAIL",
+      "category_scores": null,
+      "evaluation_summary": {
+        "error": "Could not parse purple agent response. Probably failed to generate the code."
+      },
+      "evaluation_details": null
+    },
+    {
+      "problem_name": "Robertson_ODE",
+      "problem_id": "1",
+      "runs": false,
+      "time_used_sec": 1.486614465713501,
+      "compiles": false,
+      "stdout": null,
+      "stderr": null,
+      "cli_args": null,
+      "compile_stdout": null,
+      "compile_stderr": null,
+      "composite_score": 0.0,
+      "tier": "FAIL",
+      "category_scores": null,
+      "evaluation_summary": {
+        "error": "Could not parse purple agent response. Probably failed to generate the code."
+      },
+      "evaluation_details": null
+    },
+    {
+      "problem_name": "scatter_vecmpi",
+      "problem_id": "4",
+      "runs": false,
+      "time_used_sec": 1.459852695465088,
+      "compiles": false,
+      "stdout": null,
+      "stderr": null,
+      "cli_args": null,
+      "compile_stdout": null,
+      "compile_stderr": null,
+      "composite_score": 0.0,
+      "tier": "FAIL",
+      "category_scores": null,
+      "evaluation_summary": {
+        "error": "Could not parse purple agent response. Probably failed to generate the code."
+      },
+      "evaluation_details": null
+    },
+    {
+      "problem_name": "NS2D_FV_Implicit",
+      "problem_id": "5",
+      "runs": false,
+      "time_used_sec": 5.669171571731567,
+      "compiles": false,
+      "stdout": null,
+      "stderr": null,
+      "cli_args": null,
+      "compile_stdout": null,
+      "compile_stderr": null,
+      "composite_score": 0.0,
+      "tier": "FAIL",
+      "category_scores": null,
+      "evaluation_summary": {
+        "error": "Could not parse purple agent response. Probably failed to generate the code."
+      },
+      "evaluation_details": null
+    }
+  ]
+}
