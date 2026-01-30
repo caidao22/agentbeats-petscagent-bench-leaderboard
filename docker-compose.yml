@@ -2,7 +2,7 @@ services:
   green-agent:
     image: ghcr.io/caidao22/petscagent-bench-green-agent:latest
     container_name: green-agent
-    command: ["--host", "0.0.0.0", "--port", "9001", "--card-url", "http://green-agent:9001", "--agent-llm", "gemini/gemini-3-flash-preview"]
+    command: ["--host", "0.0.0.0", "--port", "9001", "--card-url", "http://green-agent:9001", "--agent-llm", "${GREEN_AGENT_LLM:-gemini/gemini-3-flash-preview}"]
     volumes:
       - ./output:/home/petscagent/petscagent_bench/output
     environment:
@@ -23,10 +23,14 @@ services:
   purple-agent:
     image: ghcr.io/caidao22/petscagent-bench-purple-agent:latest
     container_name: purple-agent
-    command: ["--host", "0.0.0.0", "--port", "9002", "--card-url", "http://purple-agent:9002", "--agent-llm", "gemini/gemini-3-flash-preview"]
+    command: ${PURPLE_AGENT_CMD:-}
+    volumes:
+      - ./asksage_ssl_cert.pem:/app/asksage_ssl_cert.pem:ro
     environment:
       - GEMINI_API_KEY=${GEMINI_API_KEY}
       - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ASKSAGE_API_KEY=${ASKSAGE_API_KEY}
+      - ASKSAGE_SSL_CERT_FILE=/app/asksage_ssl_cert.pem
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:9002/.well-known/agent-card.json"]
       interval: 5s
@@ -45,7 +49,15 @@ services:
   client-cli:
     image: ghcr.io/caidao22/petscagent-bench-client-cli:latest
     container_name: client-cli
-    command: ["--green-url", "http://green-agent:9001", "--purple-url", "http://purple-agent:9002", "--mcp-server-url", "http://petsc-mcp-server:8080/mcp"]
+    command:
+      - "--green-url"
+      - "http://green-agent:9001"
+      - "--purple-url"
+      - "http://purple-agent:9002"
+      - "--mcp-server-url"
+      - "http://petsc-mcp-server:8080/mcp"
+      - "--purple-id"
+      - "${PURPLE_ID:-}"
     depends_on:
       green-agent:
         condition: service_healthy
