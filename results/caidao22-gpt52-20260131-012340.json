@@ -1,0 +1,740 @@
+{
+  "agent": "019c10bb-6ee1-71e1-bc40-a606ebb7e9e0",
+  "summary": {
+    "total": 6,
+    "runs_count": 4,
+    "failure_count": 2,
+    "avg_time_sec": 84.40491727987926,
+    "avg_composite_score": 33.39909128120736,
+    "tier_distribution": {
+      "GOLD": 0,
+      "SILVER": 1,
+      "BRONZE": 1,
+      "FAIL": 4
+    }
+  },
+  "results": [
+    {
+      "problem_name": "Rosenbrock_banana_function",
+      "problem_id": "3",
+      "runs": false,
+      "time_used_sec": 72.35322999954224,
+      "compiles": true,
+      "stdout": "  0 TAO,  Function value: 24.2,  Residual: 232.868 \n",
+      "stderr": "Authorization required, but no authorization protocol specified\n[0]PETSC ERROR: --------------------- Error Message --------------------------------------------------------------\n[0]PETSC ERROR: Object is in wrong state\n[0]PETSC ERROR: TaoSetHessian() not called\n[0]PETSC ERROR: See https://petsc.org/release/faq/ for trouble shooting.\n[0]PETSC ERROR: PETSc Development Git Revision: v3.24.3-327-gcc6b3d485b7 Git Date: 2026-01-18 16:08:38 +0000\n[0]PETSC ERROR: ./Rosenbrock_banana_function with 1 MPI process(es) and PETSC_ARCH arch-leapfrog-cuda-opt on hong-gce-workstation by hongzhang Sat Jan 31 15:49:45 2026\n[0]PETSC ERROR: Configure options: --with-cuda --with-fc=0 --with-memalign=64 --download-kokkos --download-kokkos-kernel -with-debugging=0 PETSC_ARCH=arch-leapfrog-cuda-opt\n[0]PETSC ERROR: #1 TaoComputeHessian() at /nfs/gce/projects/TSAdjoint/petsc/src/tao/interface/taosolver_hj.c:256\n[0]PETSC ERROR: #2 TaoBNKComputeHessian() at /nfs/gce/projects/TSAdjoint/petsc/src/tao/bound/impls/bnk/bnk.c:287\n[0]PETSC ERROR: #3 TaoSolve_BNLS() at /nfs/gce/projects/TSAdjoint/petsc/src/tao/bound/impls/bnk/bnls.c:121\n[0]PETSC ERROR: #4 TaoSolve() at /nfs/gce/projects/TSAdjoint/petsc/src/tao/interface/taosolver.c:178\n[0]PETSC ERROR: #5 main() at Rosenbrock_banana_function.c:77\n[0]PETSC ERROR: PETSc Option Table entries:\n[0]PETSC ERROR: -tao_monitor (source: command line)\n[0]PETSC ERROR: -tao_type bnls (source: command line)\n[0]PETSC ERROR: ----------------End of Error Message -------send entire error message to petsc-maint@mcs.anl.gov----------\nAbort(73) on node 0 (rank 0 in comm 16): application called MPI_Abort(MPI_COMM_SELF, 73) - process 0\n",
+      "cli_args": "-tao_type bnls -tao_monitor",
+      "compile_stdout": "mpicc -fPIC -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -g -O  -I/nfs/gce/projects/TSAdjoint/petsc/include -I/nfs/gce/projects/TSAdjoint/petsc/arch-leapfrog-cuda-opt/include -I/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/include     -Wl,-export-dynamic Rosenbrock_banana_function.c   -Wl,-rpath,/nfs/gce/projects/TSAdjoint/petsc/arch-leapfrog-cuda-opt/lib -L/nfs/gce/projects/TSAdjoint/petsc/arch-leapfrog-cuda-opt/lib -Wl,-rpath,/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/lib64 -L/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/lib64 -L/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/lib64/stubs -lpetsc -llapack -lblas -lkokkoscontainers -lkokkoscore -lkokkossimd -lm -lcudart -lnvToolsExt -lcufft -lcublas -lcusparse -lcusolver -lcurand -lcuda -lnvidia-ml -lX11 -lstdc++ -lquadmath  -o Rosenbrock_banana_function\n",
+      "compile_stderr": "",
+      "composite_score": 0.0,
+      "tier": "FAIL",
+      "category_scores": null,
+      "evaluation_summary": {
+        "error": "Exception with tool run_executable: A nonzero returncode 73 from the tool"
+      },
+      "evaluation_details": null
+    },
+    {
+      "problem_name": "Robertson_ODE",
+      "problem_id": "1",
+      "runs": true,
+      "time_used_sec": 212.4549045562744,
+      "compiles": true,
+      "stdout": "** PETSc DEPRECATION WARNING ** : the option -ts_dt is deprecated as of version 3.25 and will be removed in a future release.\n   Use the option -ts_time_step instead. (Silence this warning with -options_suppress_deprecated_warnings)\nFinal solution at t=100.:\nVec Object: 1 MPI process\n  type: seq\n0.616791\n6.14293e-06\n0.383202\n",
+      "stderr": "",
+      "cli_args": "-ts_type cn -ts_max_time 100 -ts_max_steps 999 -ts_dt 0.1 -ts_adapt_type none",
+      "compile_stdout": "mpicc -fPIC -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -g -O  -I/nfs/gce/projects/TSAdjoint/petsc/include -I/nfs/gce/projects/TSAdjoint/petsc/arch-leapfrog-cuda-opt/include -I/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/include     -Wl,-export-dynamic Robertson_ODE.c   -Wl,-rpath,/nfs/gce/projects/TSAdjoint/petsc/arch-leapfrog-cuda-opt/lib -L/nfs/gce/projects/TSAdjoint/petsc/arch-leapfrog-cuda-opt/lib -Wl,-rpath,/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/lib64 -L/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/lib64 -L/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/lib64/stubs -lpetsc -llapack -lblas -lkokkoscontainers -lkokkoscore -lkokkossimd -lm -lcudart -lnvToolsExt -lcufft -lcublas -lcusparse -lcusolver -lcurand -lcuda -lnvidia-ml -lX11 -lstdc++ -lquadmath  -o Robertson_ODE\n",
+      "compile_stderr": "",
+      "composite_score": 58.79996297711199,
+      "tier": "BRONZE",
+      "category_scores": {
+        "correctness": 87.08389180700894,
+        "performance": 5.648257462007179,
+        "code_quality": 80.66666666666666,
+        "algorithm": 65.24390243902437,
+        "petsc": 55.867768595041326
+      },
+      "evaluation_summary": {
+        "total_evaluators": 14,
+        "passed_evaluators": 10,
+        "failed_evaluators": 4,
+        "all_gates_passed": true,
+        "gates_passed": 4,
+        "gates_total": 4
+      },
+      "evaluation_details": [
+        {
+          "name": "compilation",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code compiled successfully"
+        },
+        {
+          "name": "execution",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code executed successfully"
+        },
+        {
+          "name": "memory_safety",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 0.7,
+          "feedback": "Basic memory safety check (valgrind not available)"
+        },
+        {
+          "name": "api_usage",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "All basic PETSc API requirements met"
+        },
+        {
+          "name": "numerical_accuracy",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.8708389180700894,
+          "raw_value": 0.00013829825830290467,
+          "confidence": 1.0,
+          "feedback": "Excellent accuracy: error = 1.38e-04 (threshold: 1.00e-03)"
+        },
+        {
+          "name": "execution_time",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": false,
+          "score": 0.05648257462007179,
+          "raw_value": 212.4549045562744,
+          "confidence": 1.0,
+          "feedback": "Very poor performance: 212.455s (> 60.0s)"
+        },
+        {
+          "name": "error_handling",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": false,
+          "score": 0.3,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Poor error handling: only 0 CHKERRQ calls"
+        },
+        {
+          "name": "parallel_awareness",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.85,
+          "raw_value": null,
+          "confidence": 0.8,
+          "feedback": "Parallel features: Uses PETSC_COMM_WORLD, Parallel-aware sizing"
+        },
+        {
+          "name": "readability",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": true,
+          "score": 0.8699999999999999,
+          "raw_value": null,
+          "confidence": 0.86,
+          "feedback": "Overall very readable: clear separation of RHS/Jacobian/main, consistent PETSc error-handling macros, and a strong header comment explaining the model and how to run it. Minor readability hits come from a few PETSc-specific idioms (e.g., (void)ts) and some small clarity issues around printing tf vs actual final time and tolerance arguments."
+        },
+        {
+          "name": "code_style",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": true,
+          "score": 0.85,
+          "raw_value": null,
+          "confidence": 0.86,
+          "feedback": "The code largely follows PETSc and common C conventions: correct PETSc types and error-handling macros (PetscErrorCode, PetscCall, PetscFunctionBeginUser/Return), PETSc API naming is used properly, indentation and brace style are consistent, and formatting is readable. Minor style nits include mixed naming styles for local variables, a few unnecessary casts/temporaries, and some PETSc-idiomatic improvements (e.g., using VecSet for IC or avoiding MatZeroEntries for a tiny dense Jacobian)."
+        },
+        {
+          "name": "documentation",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": true,
+          "score": 0.7,
+          "raw_value": null,
+          "confidence": 0.86,
+          "feedback": "The file-level header comment is strong: it states the problem, equations, initial condition, solver choice, and gives build/run examples. Inline comments cover key intent (Jacobian, initial condition, tolerances, time controls), and are generally clear. However, there is little to no function-level documentation for RHSFunction/RHSJacobian/main (no brief purpose/arguments/assumptions), and some important PETSc-specific rationale is undocumented (e.g., why TS_NONLINEAR is set, why MatZeroEntries each call, implications of TS_EXACTFINALTIME_MATCHSTEP, and that tf printed is not necessarily the actual final time reached). Overall understandable, but could be improved with short doc blocks per function and a few clarifying notes about PETSc TS conventions and runtime options."
+        },
+        {
+          "name": "algorithm_appropriateness",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": false,
+          "score": 0.6,
+          "raw_value": null,
+          "confidence": 0.78,
+          "feedback": "Overall, using PETSc TS with an implicit method and providing RHSFunction/RHSJacobian is a suitable high-level approach for the stiff Robertson problem. However, the specific choice of Crank\u2013Nicolson (CN) is not ideal for this problem\u2019s strong stiffness: CN is A-stable but not L-stable, so it can exhibit nonphysical oscillations and poor damping of fast modes unless the timestep is very small. The requirement of integrating to t=100 in <1000 steps (average dt ~0.1) makes CN particularly risky. In PETSc, CN is typically used with IFunction/IJacobian (implicit form) rather than RHSFunction/RHSJacobian; while PETSc can support implicit methods with RHS callbacks in some configurations, the most robust/idiomatic setup for CN is to implement the residual F(t,U,Udot)=0. Additionally, the provided code snippet is incomplete/incorrect as shown (e.g., a stray '#', truncated line, and missing Mat assembly calls), but algorithmically the intent is clear. Tolerances alone will not fix stiffness issues if dt is constrained; method choice and adaptivity/step control matter more. If the goal is a reliable solve with <1000 steps, a stiffly accurate L-stable method (BDF/Radau IIA) is a better fit."
+        },
+        {
+          "name": "solver_choice",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": true,
+          "score": 0.7,
+          "raw_value": null,
+          "confidence": 0.86,
+          "feedback": "1) Solver type: The code is using PETSc TS (time-stepper) with an implicit Crank\u2013Nicolson (CN) method. Internally, TS(CN) will use SNES (nonlinear solver) each step, and SNES will use KSP (linear solver) for Newton updates.\n\n2) Appropriateness: Using TS is correct for an ODE IVP, and using an implicit method is sensible because the Robertson problem is stiff. However, CN is A-stable but not L-stable, so it can exhibit oscillations/poor damping on very stiff components and may require very small timesteps to behave well. The requirement \u201ct=0..100 with <1000 steps\u201d can be hard to satisfy robustly with CN unless you tune dt/adaptivity carefully.\n\n3) Linear (KSP) suitability: Not directly specified in the snippet. For this tiny 3x3 system, KSP choice is largely irrelevant; PETSc may use a direct solve (e.g., preonly+lu) or a small Krylov method. If left default, it will still work, but explicitly setting -ksp_type preonly -pc_type lu is often simplest and most robust for such small dense Jacobians.\n\n4) Nonlinear (SNES) suitability: Yes\u2014implicit CN requires solving nonlinear equations each step, and SNES is the right mechanism. Providing RHSJacobian is good and improves robustness.\n\n5) Better alternatives: For stiff chemical kinetics like Robertson, a stiffly accurate L-stable method is typically more robust/efficient than CN at larger timesteps. In PETSc, good alternatives are TSARKIMEX (IMEX RK), TSROSW (Rosenbrock-W), or TSBDF (BDF). These usually handle stiffness better and are more likely to reach t=100 in <1000 steps with good accuracy. Also consider enabling TS adaptivity rather than forcing a fixed dt and disabling adapt."
+        },
+        {
+          "name": "petsc_best_practices",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": false,
+          "score": 0.6,
+          "raw_value": null,
+          "confidence": 0.62,
+          "feedback": "What\u2019s shown follows several core PETSc practices (PetscCall error handling, PetscFunctionBeginUser/Return, VecGetArrayRead/Restore, explicit RHSFunction/RHSJacobian separation). However, the snippet does not show key best-practice elements that typically make a PETSc TS example \u201ccomplete\u201d: (1) creating TS/Vec/Mat with proper preallocation, (2) calling TSSetFromOptions/KSPSetFromOptions so -ts_*, -snes_*, -ksp_*, -pc_* options work, (3) setting up SNES/KSP/PC for the implicit solve (CN uses nonlinear/linear solves internally), (4) using PetscViewer (or at least PetscPrintf) for portable output, and (5) providing runtime configurability for tolerances, initial dt, adaptivity, and output frequency. The header comment mentions runtime options, but the code shown does not demonstrate the required SetFromOptions calls or any viewer-based output. Jacobian assembly is also incomplete in the snippet (no MatSetValues/AssemblyBegin/End shown), and best practice is to assemble into P (preconditioning matrix) and optionally J, respecting PETSc\u2019s J/P split."
+        }
+      ]
+    },
+    {
+      "problem_name": "scatter_vecmpi",
+      "problem_id": "4",
+      "runs": true,
+      "time_used_sec": 10.681292533874512,
+      "compiles": true,
+      "stdout": "Gathered y on rank 0 (should be 2,4,...,2N):\nVec Object: 1 MPI process\n  type: seq\n2.\n4.\n6.\n8.\n10.\n12.\n14.\n16.\n18.\n20.\n",
+      "stderr": "",
+      "cli_args": "-N 10",
+      "compile_stdout": "mpicc -fPIC -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -g -O  -I/nfs/gce/projects/TSAdjoint/petsc/include -I/nfs/gce/projects/TSAdjoint/petsc/arch-leapfrog-cuda-opt/include -I/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/include     -Wl,-export-dynamic scatter_vecmpi.c   -Wl,-rpath,/nfs/gce/projects/TSAdjoint/petsc/arch-leapfrog-cuda-opt/lib -L/nfs/gce/projects/TSAdjoint/petsc/arch-leapfrog-cuda-opt/lib -Wl,-rpath,/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/lib64 -L/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/lib64 -L/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/lib64/stubs -lpetsc -llapack -lblas -lkokkoscontainers -lkokkoscore -lkokkossimd -lm -lcudart -lnvToolsExt -lcufft -lcublas -lcusparse -lcusolver -lcurand -lcuda -lnvidia-ml -lX11 -lstdc++ -lquadmath  -o scatter_vecmpi\n",
+      "compile_stderr": "",
+      "composite_score": 77.81792783274147,
+      "tier": "SILVER",
+      "category_scores": {
+        "correctness": 100.0,
+        "performance": 68.63741493225098,
+        "code_quality": 80.0,
+        "algorithm": 83.05882352941177,
+        "petsc": 80.63492063492063
+      },
+      "evaluation_summary": {
+        "total_evaluators": 14,
+        "passed_evaluators": 12,
+        "failed_evaluators": 2,
+        "all_gates_passed": true,
+        "gates_passed": 4,
+        "gates_total": 4
+      },
+      "evaluation_details": [
+        {
+          "name": "compilation",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code compiled successfully"
+        },
+        {
+          "name": "execution",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code executed successfully"
+        },
+        {
+          "name": "memory_safety",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 0.7,
+          "feedback": "Basic memory safety check (valgrind not available)"
+        },
+        {
+          "name": "api_usage",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "All basic PETSc API requirements met"
+        },
+        {
+          "name": "numerical_accuracy",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": true,
+          "score": 1.0,
+          "raw_value": 0.0,
+          "confidence": 1.0,
+          "feedback": "Excellent accuracy: error = 0.00e+00 (threshold: 1.00e-03)"
+        },
+        {
+          "name": "execution_time",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.6863741493225097,
+          "raw_value": 10.681292533874512,
+          "confidence": 1.0,
+          "feedback": "Acceptable performance: 10.681s (5.0s - 15.0s)"
+        },
+        {
+          "name": "error_handling",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.8,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Good error handling: 24 CHKERRQ calls"
+        },
+        {
+          "name": "parallel_awareness",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": true,
+          "score": 1.0,
+          "raw_value": null,
+          "confidence": 0.8,
+          "feedback": "Parallel features: Uses PETSC_COMM_WORLD, Rank-aware code, Parallel-aware sizing"
+        },
+        {
+          "name": "readability",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": true,
+          "score": 0.85,
+          "raw_value": null,
+          "confidence": 0.86,
+          "feedback": "Overall very readable: clear step-by-step structure, PETSc error handling is consistent, and comments match the intended test workflow. Minor readability/clarity issues come from PETSc-specific subtleties (e.g., IS communicators and the dummy zero-length y on non-root ranks) that could use a short explanatory comment or a more idiomatic PETSc approach."
+        },
+        {
+          "name": "code_style",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": true,
+          "score": 0.85,
+          "raw_value": null,
+          "confidence": 0.86,
+          "feedback": "Overall the code is very close to PETSc example style: correct PETSc types (PetscErrorCode, PetscInt, Vec, IS, VecScatter), consistent use of CHKERRQ, and PETSc function naming is correct. Indentation and brace placement are clean and readable. Minor style nits: variable naming mixes PETSc\u2019s common short names (x,y,ierr) with MPI-style (rank) but is still consistent; a couple of formatting choices (inline CHKERRQ after statements, extra block scope) may differ from some PETSc examples but are acceptable."
+        },
+        {
+          "name": "documentation",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": true,
+          "score": 0.7,
+          "raw_value": null,
+          "confidence": 0.86,
+          "feedback": "The file-level header comment clearly states the program\u2019s purpose, steps, and an example invocation. Inline comments explain the main phases (vector creation, initialization, scaling, scatter/gather, printing) and clarify a subtle point about creating a valid Vec on non-root ranks. However, there is no function-level documentation for main (or any helper functions), and some PETSc-specific nuances are not explained (e.g., why ISCreateStride uses PETSC_COMM_SELF, how VecScatterCreate interprets the index sets across ranks, and that the chosen IS setup is effectively a full gather). Overall, it\u2019s understandable for PETSc users but could be more explicit for newcomers."
+        },
+        {
+          "name": "algorithm_appropriateness",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": false,
+          "score": 0.6,
+          "raw_value": null,
+          "confidence": 0.72,
+          "feedback": "The overall strategy matches the problem requirements: create a distributed Vec, set global values 1..N using ownership ranges, assemble, scale, then gather to rank 0 and view. However, the specific VecScatter setup shown is problematic: creating IS objects with PETSC_COMM_SELF and length N on every rank does not describe the distributed layout of x, and will generally be invalid/wrong for non-root ranks. For a gather-to-root, PETSc typically expects either (a) VecScatterCreateToZero/VecScatterCreateToAll, or (b) a properly constructed scatter where each rank\u2019s 'from' IS matches its local ownership range and the root\u2019s 'to' IS maps into the correct global positions, while non-root 'to' IS is empty. Also, creating a 0-length sequential y on non-root is a common workaround, but only works if the scatter is created consistently with empty 'to' on non-root and correct 'from' on each rank. As written, the approach is close but likely incorrect in practice."
+        },
+        {
+          "name": "solver_choice",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": true,
+          "score": 1.0,
+          "raw_value": null,
+          "confidence": 0.98,
+          "feedback": "No PETSc solver (KSP/SNES/TS) is used in the provided code. The program performs vector creation, assembly, scaling, and a VecScatter gather to rank 0 followed by VecView. Since there is no linear/nonlinear/time-stepping system to solve, using a solver would be unnecessary and inappropriate overhead. The chosen PETSc components (Vec, IS, VecScatter) match the stated task."
+        },
+        {
+          "name": "petsc_best_practices",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": false,
+          "score": 0.6,
+          "raw_value": null,
+          "confidence": 0.72,
+          "feedback": "Good basic PETSc hygiene: PetscInitialize/PetscFinalize pattern (though code is truncated), error checking with CHKERRQ, correct Vec assembly after VecSetValue, and use of VecScatter for a gather. However, several best-practice issues: (1) forcing VecSetType(x,VECMPI) reduces flexibility; prefer VecSetFromOptions() (and/or VecCreateMPI) so -vec_type can work. (2) The gather setup is not ideal: creating a 0-length sequential vector on non-root and using ISCreateStride(PETSC_COMM_SELF,N,...) on all ranks is suspicious; for a gather-to-root, prefer VecScatterCreateToZero(x,&scatter,&y) (or VecScatterCreateToAll) which handles sizes/communicators correctly. (3) Output: VecView(y,PETSC_VIEWER_STDOUT_SELF) on rank 0 is fine, but best practice is to use PETSC_VIEWER_STDOUT_WORLD (or an explicitly created PetscViewer) and let PETSc handle rank filtering, or guard with rank==0 as you intend. (4) Runtime configurability is limited: only -N is supported; no VecSetFromOptions, no viewer options, no -options_left checking, and no use of higher-level objects (KSP/PC) so -ksp_type/-pc_type are irrelevant here. (5) Ensure all created objects are destroyed (VecDestroy, ISDestroy, VecScatterDestroy) and PetscFinalize is called; missing in the truncated snippet."
+        }
+      ]
+    },
+    {
+      "problem_name": "Advection_PDE",
+      "problem_id": "2",
+      "runs": true,
+      "time_used_sec": 45.20421528816223,
+      "compiles": true,
+      "stdout": "** PETSc DEPRECATION WARNING ** : the option -ts_dt is deprecated as of version 3.25 and will be removed in a future release.\n   Use the option -ts_time_step instead. (Silence this warning with -options_suppress_deprecated_warnings)\nFinal solution at t=1.:\nVec Object: 1 MPI process\n  type: seq\n0.00854931\n0.0600859\n0.111385\n0.162245\n0.212465\n0.261846\n0.310194\n0.357317\n0.403031\n0.447153\n0.489511\n0.529938\n0.568272\n0.604364\n0.638071\n0.66926\n0.697807\n0.723601\n0.746539\n0.76653\n0.783497\n0.797371\n0.808099\n0.815637\n0.819956\n0.821039\n0.818883\n0.813494\n0.804895\n0.793119\n0.778213\n0.760236\n0.739259\n0.715364\n0.688646\n0.65921\n0.627172\n0.59266\n0.555808\n0.516763\n0.475678\n0.432717\n0.388047\n0.341846\n0.294296\n0.245584\n0.195903\n0.14545\n0.0944216\n0.0430211\n-0.00854931\n-0.0600859\n-0.111385\n-0.162245\n-0.212465\n-0.261846\n-0.310194\n-0.357317\n-0.403031\n-0.447153\n-0.489511\n-0.529938\n-0.568272\n-0.604364\n-0.638071\n-0.66926\n-0.697807\n-0.723601\n-0.746539\n-0.76653\n-0.783497\n-0.797371\n-0.808099\n-0.815637\n-0.819956\n-0.821039\n-0.818883\n-0.813494\n-0.804895\n-0.793119\n-0.778213\n-0.760236\n-0.739259\n-0.715364\n-0.688646\n-0.65921\n-0.627172\n-0.59266\n-0.555808\n-0.516763\n-0.475678\n-0.432717\n-0.388047\n-0.341846\n-0.294296\n-0.245584\n-0.195903\n-0.14545\n-0.0944216\n-0.0430211\n",
+      "stderr": "",
+      "cli_args": "-ts_type rk -ts_rk_type 3 -ts_dt 0.001 -ts_max_steps 999",
+      "compile_stdout": "mpicc -fPIC -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -g -O  -I/nfs/gce/projects/TSAdjoint/petsc/include -I/nfs/gce/projects/TSAdjoint/petsc/arch-leapfrog-cuda-opt/include -I/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/include     -Wl,-export-dynamic Advection_PDE.c   -Wl,-rpath,/nfs/gce/projects/TSAdjoint/petsc/arch-leapfrog-cuda-opt/lib -L/nfs/gce/projects/TSAdjoint/petsc/arch-leapfrog-cuda-opt/lib -Wl,-rpath,/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/lib64 -L/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/lib64 -L/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/lib64/stubs -lpetsc -llapack -lblas -lkokkoscontainers -lkokkoscore -lkokkossimd -lm -lcudart -lnvToolsExt -lcufft -lcublas -lcusparse -lcusolver -lcurand -lcuda -lnvidia-ml -lX11 -lstdc++ -lquadmath  -o Advection_PDE\n",
+      "compile_stderr": "",
+      "composite_score": 34.47687001344294,
+      "tier": "FAIL",
+      "category_scores": {
+        "correctness": 0.18192339033241242,
+        "performance": 33.15180863274468,
+        "code_quality": 80.66666666666666,
+        "algorithm": 80.00000000000001,
+        "petsc": 53.404255319148945
+      },
+      "evaluation_summary": {
+        "total_evaluators": 14,
+        "passed_evaluators": 11,
+        "failed_evaluators": 3,
+        "all_gates_passed": true,
+        "gates_passed": 4,
+        "gates_total": 4
+      },
+      "evaluation_details": [
+        {
+          "name": "compilation",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code compiled successfully"
+        },
+        {
+          "name": "execution",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code executed successfully"
+        },
+        {
+          "name": "memory_safety",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 0.7,
+          "feedback": "Basic memory safety check (valgrind not available)"
+        },
+        {
+          "name": "api_usage",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "All basic PETSc API requirements met"
+        },
+        {
+          "name": "numerical_accuracy",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": false,
+          "score": 0.0018192339033241242,
+          "raw_value": 0.006309339798749769,
+          "confidence": 1.0,
+          "feedback": "Acceptable accuracy: error = 6.31e-03 (threshold: 1.00e-03)"
+        },
+        {
+          "name": "execution_time",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.33151808632744684,
+          "raw_value": 45.20421528816223,
+          "confidence": 1.0,
+          "feedback": "Poor performance: 45.204s (15.0s - 60.0s)"
+        },
+        {
+          "name": "error_handling",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": false,
+          "score": 0.3,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Poor error handling: only 0 CHKERRQ calls"
+        },
+        {
+          "name": "parallel_awareness",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.85,
+          "raw_value": null,
+          "confidence": 0.8,
+          "feedback": "Parallel features: Uses PETSC_COMM_WORLD, Parallel-aware sizing"
+        },
+        {
+          "name": "readability",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": true,
+          "score": 0.8699999999999999,
+          "raw_value": null,
+          "confidence": 0.86,
+          "feedback": "Overall very readable: clear separation of concerns (RHS, IC, main), consistent PETSc error-handling style, and comments that explain the numerical choices. Minor readability hits come from a couple of slightly awkward expressions (dt/CFL line), some redundant includes, and a few places where intent could be clarified (e.g., TS tolerances for explicit RK, printing tf vs actual final time)."
+        },
+        {
+          "name": "code_style",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": true,
+          "score": 0.85,
+          "raw_value": null,
+          "confidence": 0.86,
+          "feedback": "Overall the code is very close to PETSc house style: correct PETSc types (PetscErrorCode, PetscInt/Real/Scalar), proper error handling with PetscCall, and correct use of PetscFunctionBeginUser/Return. Indentation and brace placement are consistent and readable. Minor deviations are mostly around naming consistency and a couple of PETSc-idiomatic details (e.g., TSSetProblemType choice, printing final time)."
+        },
+        {
+          "name": "documentation",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": true,
+          "score": 0.7,
+          "raw_value": null,
+          "confidence": 0.86,
+          "feedback": "The file-level header comment is strong: it states the PDE, domain/BCs, discretization choices, and gives build/run examples and key notes. Inline comments explain the upwind branching and periodic wrap-around clearly, and the CFL-based dt choice is documented. However, there are no function-level doc comments describing each function\u2019s purpose, arguments, assumptions (e.g., serial vs parallel Vec layout), or expected units/behavior. Some comments are slightly misleading or unnecessary (e.g., TS tolerances for explicit RK, printing tf rather than TSGetTime), and the max-steps comment references a \u201crequirement\u201d not defined in the code. Overall, it\u2019s understandable but could be more complete and consistent with PETSc-style documentation."
+        },
+        {
+          "name": "algorithm_appropriateness",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": true,
+          "score": 0.8,
+          "raw_value": null,
+          "confidence": 0.78,
+          "feedback": "The overall approach (method-of-lines with PETSc TS + first-order upwind finite differences on a uniform periodic grid) is suitable and standard for 1D linear advection. The RHSFunction correctly implements an upwind flux depending on the sign of c and handles periodic wrap-around indexing. Using TS with an explicit RK method is sensible because the semi-discrete system is non-stiff; stability is governed by a CFL condition, so choosing dt to keep steps < 1000 is feasible (e.g., dt <= dx/|c|). Printing the final solution with VecView is appropriate.\n\nMain caveats: (1) TSSetTolerances is primarily meaningful for adaptive/implicit methods; for explicit fixed-step RK, tolerances may be ignored unless using an adaptive controller. If tolerances are set, they should be consistent with the chosen TS type and whether adaptivity is enabled. (2) First-order upwind is very diffusive; it will smear the sine wave over t=1, so accuracy is limited though stability/robustness is good. (3) For parallel runs, a plain Vec with manual indexing works but does not scale well; DMDA would be the idiomatic PETSc approach to manage ghost points and periodic boundaries cleanly.\n\nThe provided code snippet is truncated in the initial condition loop, but conceptually the strategy is correct."
+        },
+        {
+          "name": "solver_choice",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": true,
+          "score": 0.8,
+          "raw_value": null,
+          "confidence": 0.86,
+          "feedback": "1) Solver type: The code is using PETSc TS (time-stepper) with an explicit RHSFunction (ODE form U_t = F(U,t)). No SNES/KSP is required unless an implicit TS type is selected.\n\n2) Appropriateness: TS is the correct PETSc abstraction for a time-dependent PDE after spatial discretization (method of lines). For 1D linear advection with first-order upwind, an explicit TS method is appropriate provided the timestep satisfies the CFL stability restriction (dt <= dx/|c| up to a method-dependent factor). The requirement \u201c< 1000 time steps to reach t=1\u201d is feasible for N=100 if |c| is O(1) (dx=0.01, so dt ~ 0.001\u20130.01 depending on stability/accuracy).\n\n3) Linear/KSP: Not applicable for the shown approach because explicit TS does not solve linear systems each step. If the user switches to an implicit TS (e.g., BE/CN/Theta), then KSP becomes relevant; for this semi-discrete advection operator (nonsymmetric), GMRES (or FGMRES) would be a reasonable default, typically with a simple preconditioner (e.g., Jacobi/ILU) for larger problems.\n\n4) Nonlinear/SNES: Not applicable here; the RHS is linear in U. SNES would only appear for implicit formulations with nonlinear residuals (or if you used IFunction/IJacobian with a nonlinear PDE).\n\n5) Better alternatives: For pure advection, explicit SSP Runge\u2013Kutta methods are often preferred (stability/monotonicity with upwinding). If accuracy is the goal, higher-order spatial schemes (TVD/flux limiters, WENO) matter more than changing the PETSc solver class. If stiffness is introduced (e.g., diffusion, very fine grids with restrictive dt), implicit or IMEX TS methods can be better."
+        },
+        {
+          "name": "petsc_best_practices",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": false,
+          "score": 0.5,
+          "raw_value": null,
+          "confidence": 0.55,
+          "feedback": "From the provided snippet, the code follows several core PETSc practices (error handling via PetscCall, correct Vec array access patterns, TS-style RHSFunction signature, and use of an application context). However, the snippet does not show key best-practice elements typically expected in a PETSc example: (1) explicit PetscOptions processing (e.g., PetscOptionsBegin/End) to set N, c, dt, etc. at runtime; (2) TSSetFromOptions/VecSetFromOptions to enable command-line configuration; (3) any PetscViewer usage for output (e.g., VecView with PETSC_VIEWER_STDOUT_WORLD or -vec_view); and (4) no evidence of KSP/PC options (which may be irrelevant if only explicit TS is used, but would matter if implicit/IMEX methods are supported). Also not visible (due to truncation) are important lifecycle calls like PetscInitialize/PetscFinalize, object destruction (VecDestroy/TSDestroy), and parallel layout choices (e.g., VecCreateMPI with local ownership and ghosting/DMDA for stencil operations). If the remainder of the code includes TSSetFromOptions and proper initialization/finalization, the score would increase."
+        }
+      ]
+    },
+    {
+      "problem_name": "NS2D_FV_Implicit",
+      "problem_id": "5",
+      "runs": false,
+      "time_used_sec": 68.91445279121399,
+      "compiles": true,
+      "stdout": "** PETSc DEPRECATION WARNING ** : the option -ts_dt is deprecated as of version 3.25 and will be removed in a future release.\n   Use the option -ts_time_step instead. (Silence this warning with -options_suppress_deprecated_warnings)\n",
+      "stderr": "Authorization required, but no authorization protocol specified\n[0]PETSC ERROR: --------------------- Error Message --------------------------------------------------------------\n[0]PETSC ERROR: Object is in wrong state\n[0]PETSC ERROR: Matrix is missing diagonal entries\n[0]PETSC ERROR: See https://petsc.org/release/faq/ for trouble shooting.\n[0]PETSC ERROR: PETSc Development Git Revision: v3.24.3-327-gcc6b3d485b7 Git Date: 2026-01-18 16:08:38 +0000\n[0]PETSC ERROR: ./NS2D_FV_Implicit with 1 MPI process(es) and PETSC_ARCH arch-leapfrog-cuda-opt on hong-gce-workstation by hongzhang Sat Jan 31 15:57:37 2026\n[0]PETSC ERROR: Configure options: --with-cuda --with-fc=0 --with-memalign=64 --download-kokkos --download-kokkos-kernel -with-debugging=0 PETSC_ARCH=arch-leapfrog-cuda-opt\n[0]PETSC ERROR: #1 MatILUFactorSymbolic_SeqAIJ() at /nfs/gce/projects/TSAdjoint/petsc/src/mat/impls/aij/seq/aijfact.c:1561\n[0]PETSC ERROR: #2 MatILUFactorSymbolic() at /nfs/gce/projects/TSAdjoint/petsc/src/mat/interface/matrix.c:7148\n[0]PETSC ERROR: #3 PCSetUp_ILU() at /nfs/gce/projects/TSAdjoint/petsc/src/ksp/pc/impls/factor/ilu/ilu.c:133\n[0]PETSC ERROR: #4 PCSetUp() at /nfs/gce/projects/TSAdjoint/petsc/src/ksp/pc/interface/precon.c:1120\n[0]PETSC ERROR: #5 KSPSetUp() at /nfs/gce/projects/TSAdjoint/petsc/src/ksp/ksp/interface/itfunc.c:429\n[0]PETSC ERROR: #6 KSPSolve_Private() at /nfs/gce/projects/TSAdjoint/petsc/src/ksp/ksp/interface/itfunc.c:841\n[0]PETSC ERROR: #7 KSPSolve() at /nfs/gce/projects/TSAdjoint/petsc/src/ksp/ksp/interface/itfunc.c:1094\n[0]PETSC ERROR: #8 SNESSolve_NEWTONLS() at /nfs/gce/projects/TSAdjoint/petsc/src/snes/impls/ls/ls.c:220\n[0]PETSC ERROR: #9 SNESSolve() at /nfs/gce/projects/TSAdjoint/petsc/src/snes/interface/snes.c:4914\n[0]PETSC ERROR: #10 TSTheta_SNESSolve() at /nfs/gce/projects/TSAdjoint/petsc/src/ts/impls/implicit/theta/theta.c:172\n[0]PETSC ERROR: #11 TSStep_Theta() at /nfs/gce/projects/TSAdjoint/petsc/src/ts/impls/implicit/theta/theta.c:223\n[0]PETSC ERROR: #12 TSStep() at /nfs/gce/projects/TSAdjoint/petsc/src/ts/interface/ts.c:3535\n[0]PETSC ERROR: #13 TSSolve() at /nfs/gce/projects/TSAdjoint/petsc/src/ts/interface/ts.c:4198\n[0]PETSC ERROR: #14 main() at NS2D_FV_Implicit.c:530\n[0]PETSC ERROR: PETSc Option Table entries:\n[0]PETSC ERROR: -ksp_type gmres (source: command line)\n[0]PETSC ERROR: -Nx 32 (source: command line)\n[0]PETSC ERROR: -Ny 32 (source: command line)\n[0]PETSC ERROR: -pc_type ilu (source: command line)\n[0]PETSC ERROR: -Re 100 (source: command line)\n[0]PETSC ERROR: -snes_linesearch_type bt (source: command line)\n[0]PETSC ERROR: -snes_max_it 50 (source: command line)\n[0]PETSC ERROR: -ts_max_time 1.0 (source: command line)\n[0]PETSC ERROR: -ts_time_step 0.01 (source: code)\n[0]PETSC ERROR: -ts_type beuler (source: command line)\n[0]PETSC ERROR: ----------------End of Error Message -------send entire error message to petsc-maint@mcs.anl.gov----------\nAbort(73) on node 0 (rank 0 in comm 16): application called MPI_Abort(MPI_COMM_SELF, 73) - process 0\n",
+      "cli_args": "-Nx 32 -Ny 32 -Re 100 -ts_type beuler -ts_max_time 1.0 -ts_dt 0.01 -snes_linesearch_type bt -snes_max_it 50 -ksp_type gmres -pc_type ilu",
+      "compile_stdout": "mpicc -fPIC -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -g -O  -I/nfs/gce/projects/TSAdjoint/petsc/include -I/nfs/gce/projects/TSAdjoint/petsc/arch-leapfrog-cuda-opt/include -I/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/include     -Wl,-export-dynamic NS2D_FV_Implicit.c   -Wl,-rpath,/nfs/gce/projects/TSAdjoint/petsc/arch-leapfrog-cuda-opt/lib -L/nfs/gce/projects/TSAdjoint/petsc/arch-leapfrog-cuda-opt/lib -Wl,-rpath,/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/lib64 -L/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/lib64 -L/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/lib64/stubs -lpetsc -llapack -lblas -lkokkoscontainers -lkokkoscore -lkokkossimd -lm -lcudart -lnvToolsExt -lcufft -lcublas -lcusparse -lcusolver -lcurand -lcuda -lnvidia-ml -lX11 -lstdc++ -lquadmath  -o NS2D_FV_Implicit\n",
+      "compile_stderr": "NS2D_FV_Implicit.c: In function \u2018main\u2019:\nNS2D_FV_Implicit.c:538:5: warning: \u2018maxdiv\u2019 may be used uninitialized in this function [-Wmaybe-uninitialized]\n  538 |     PetscPrintf(PETSC_COMM_SELF,\"%.15e\\n\",(double)maxdiv);\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n",
+      "composite_score": 0.0,
+      "tier": "FAIL",
+      "category_scores": null,
+      "evaluation_summary": {
+        "error": "Exception with tool run_executable: A nonzero returncode 73 from the tool"
+      },
+      "evaluation_details": null
+    },
+    {
+      "problem_name": "DarcyFlow2D_Steady",
+      "problem_id": "6",
+      "runs": true,
+      "time_used_sec": 96.82140851020813,
+      "compiles": true,
+      "stdout": "5.105059505575981e-03\n",
+      "stderr": "",
+      "cli_args": "-nx 32 -ny 32 -ksp_type cg -pc_type jacobi -ksp_rtol 1e-10",
+      "compile_stdout": "mpicc -fPIC -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -g -O  -I/nfs/gce/projects/TSAdjoint/petsc/include -I/nfs/gce/projects/TSAdjoint/petsc/arch-leapfrog-cuda-opt/include -I/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/include     -Wl,-export-dynamic DarcyFlow2D_Steady.c   -Wl,-rpath,/nfs/gce/projects/TSAdjoint/petsc/arch-leapfrog-cuda-opt/lib -L/nfs/gce/projects/TSAdjoint/petsc/arch-leapfrog-cuda-opt/lib -Wl,-rpath,/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/lib64 -L/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/lib64 -L/nfs/gce/projects/petsc/soft/u22.04/spack-2024-11-27-cuda/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.4.0/cuda-12.6.3-2s53sodymcwqxunojtfxis77gbpjazvv/lib64/stubs -lpetsc -llapack -lblas -lkokkoscontainers -lkokkoscore -lkokkossimd -lm -lcudart -lnvToolsExt -lcufft -lcublas -lcusparse -lcusolver -lcurand -lcuda -lnvidia-ml -lX11 -lstdc++ -lquadmath  -o DarcyFlow2D_Steady\n",
+      "compile_stderr": "",
+      "composite_score": 29.299786863947766,
+      "tier": "FAIL",
+      "category_scores": {
+        "correctness": 0.0,
+        "performance": 12.393953139748849,
+        "code_quality": 69.24444444444444,
+        "algorithm": 75.24390243902438,
+        "petsc": 57.674418604651166
+      },
+      "evaluation_summary": {
+        "total_evaluators": 14,
+        "passed_evaluators": 9,
+        "failed_evaluators": 5,
+        "all_gates_passed": true,
+        "gates_passed": 4,
+        "gates_total": 4
+      },
+      "evaluation_details": [
+        {
+          "name": "compilation",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code compiled successfully"
+        },
+        {
+          "name": "execution",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code executed successfully"
+        },
+        {
+          "name": "memory_safety",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 0.7,
+          "feedback": "Basic memory safety check (valgrind not available)"
+        },
+        {
+          "name": "api_usage",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "All basic PETSc API requirements met"
+        },
+        {
+          "name": "numerical_accuracy",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": false,
+          "score": 0.0,
+          "raw_value": null,
+          "confidence": 0.5,
+          "feedback": "Error computing accuracy: Unsupported expected_output type: <class 'str'>"
+        },
+        {
+          "name": "execution_time",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": false,
+          "score": 0.12393953139748849,
+          "raw_value": 96.82140851020813,
+          "confidence": 1.0,
+          "feedback": "Very poor performance: 96.821s (> 60.0s)"
+        },
+        {
+          "name": "error_handling",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": false,
+          "score": 0.3,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Poor error handling: only 24 CHKERRQ calls"
+        },
+        {
+          "name": "parallel_awareness",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": true,
+          "score": 1.0,
+          "raw_value": null,
+          "confidence": 0.8,
+          "feedback": "Parallel features: Uses PETSC_COMM_WORLD, Rank-aware code, Parallel-aware sizing"
+        },
+        {
+          "name": "readability",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": true,
+          "score": 0.86,
+          "raw_value": null,
+          "confidence": 0.86,
+          "feedback": "Overall, the code is easy to read and follow: it has clear helper functions, a straightforward assembly/solve pipeline, and comments that explain the discretization and key implementation choices. Variable names are mostly meaningful and consistent with FEM conventions. Readability is slightly reduced by some repeated code blocks (triangle handling and L2 loop), a few overloaded identifiers (x1/y1 used both as coordinates and as \u201cnode 1\u201d conceptually), and limited separation between \u201cmesh/geometry\u201d, \u201cassembly\u201d, \u201cBC application\u201d, and \u201cpostprocessing\u201d into distinct functions."
+        },
+        {
+          "name": "code_style",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": false,
+          "score": 0.5,
+          "raw_value": null,
+          "confidence": 0.0,
+          "feedback": "LLM evaluation failed: litellm.BadGatewayError: BadGatewayError: OpenAIException - <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>"
+        },
+        {
+          "name": "documentation",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": true,
+          "score": 0.75,
+          "raw_value": null,
+          "confidence": 0.84,
+          "feedback": "The file-level header comment is strong: it states the PDE context, discretization choices, boundary treatment, PETSc usage, and build/run examples. There are helpful inline comments in key places (element formulas, triangle gradients, Dirichlet enforcement, and L2 norm computation). However, most helper functions (permeability, source_f, node_id, is_boundary_node, tri_gradients) lack function-level doc comments describing purpose, inputs/outputs, assumptions (e.g., triangle non-degeneracy), and units/meaning of parameters. Some implementation choices could be documented more (e.g., why preallocation=15, implications of centroid quadrature accuracy, and the cost/behavior of calling MatZeroRowsColumns in a loop). Overall, it\u2019s understandable to a FEM/PETSc user, but not fully self-documenting at the function/API level."
+        },
+        {
+          "name": "algorithm_appropriateness",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": true,
+          "score": 0.7,
+          "raw_value": null,
+          "confidence": 0.78,
+          "feedback": "The proposed approach (conforming P1 FEM on a triangulated unit square, manual element-by-element assembly into PETSc Mat/Vec, strong Dirichlet enforcement, KSP solve, then L2 norm) is fundamentally suitable for the stated elliptic Darcy problem and matches the weak form. Using P1 elements is standard and will converge for this smooth RHS and piecewise-constant k.\n\nAlgorithm choice mostly makes sense: (1) stiffness assembly via constant element gradients for P1 triangles is correct; (2) using PETSc KSP with runtime-configurable options is appropriate; (3) strong Dirichlet imposition by row/column modification (or row identity) is a common strategy.\n\nMain weaknesses/risks:\n- The load vector uses 1-point quadrature at the centroid. For a Gaussian source, this can be noticeably inaccurate unless the mesh is sufficiently fine; a higher-order quadrature (e.g., 3-point for triangles) would be a safer default.\n- The permeability is discontinuous across a circle. Approximating k as a single constant per element (e.g., evaluated at centroid) is acceptable but can introduce geometric/aliasing error near the interface; integrating k at quadrature points (or using sub-triangulation/cut-cell handling) improves accuracy.\n- For CG, the matrix must be SPD. It will be SPD if Dirichlet constraints are applied correctly and symmetry is preserved. Some \u201cset boundary row to identity\u201d implementations break symmetry unless columns are also handled consistently; that can harm CG and preconditioners.\n- Manual assembly is more code and more error-prone than PETSc\u2019s DMPlex+PetscFE path; it also makes parallelization harder.\n\nOverall, it is a reasonable solution strategy for a single-file educational implementation, but accuracy and robustness would improve with better quadrature and/or PETSc\u2019s FEM infrastructure."
+        },
+        {
+          "name": "solver_choice",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": true,
+          "score": 0.8,
+          "raw_value": null,
+          "confidence": 0.86,
+          "feedback": "1) Solver type: The code uses PETSc KSP (linear Krylov solver) with Mat/Vec assembly.\n2) Appropriateness: Yes. The discretized steady Darcy equation with Dirichlet BCs yields a linear system Au=b. With k(x,y)>0, the stiffness matrix is symmetric positive definite (SPD) for standard conforming FEM, so a linear solver (KSP) is the correct PETSc layer (not SNES/TS).\n3) KSP type suitability: The comment indicates CG (ksp_type cg) with multigrid/Hypre preconditioning. CG is appropriate for SPD systems and is typically a good default here. GMRES would also work but is not necessary if the matrix is SPD.\n4) Nonlinear: Not applicable; the PDE and discretization are linear, so SNES is not needed.\n5) Better alternatives: The main improvement is in preconditioning choice rather than switching away from KSP. For heterogeneous k (10 vs 1) and refined meshes, multigrid (geometric via PCMG or algebraic via GAMG/HYPRE BoomerAMG) is usually best. If the implementation accidentally breaks symmetry (e.g., due to Dirichlet row/column handling), then switching to GMRES or fixing the BC imposition to preserve SPD would be advised."
+        },
+        {
+          "name": "petsc_best_practices",
+          "type": "quality",
+          "method": "llm_openai/gpt52",
+          "passed": false,
+          "score": 0.4,
+          "raw_value": null,
+          "confidence": 0.35,
+          "feedback": "Only a partial code snippet is provided (it cuts off mid-function and does not show PETSc object creation, options handling, assembly, KSP setup/solve, or output). From the header comment, it appears intended to be runtime-configurable via standard PETSc command-line options (e.g., -ksp_type, -pc_type), which is a best practice, but this cannot be verified without seeing calls like KSPSetFromOptions()/PCSetFromOptions() and PetscOptionsGet* for nx/ny. No PetscViewer usage is visible in the snippet; printing a single scalar is fine with PetscPrintf, but if the code writes vectors/matrices/fields, using PetscViewer (ASCII/VTK/Draw) would be preferred. The snippet does show use of PETSc scalar types (PetscReal, PetscInt, PetscBool) and Petsc math (PetscExpReal), which is good. Cannot assess error checking (CHKERRQ/PetscCall), collective semantics, preallocation, MatSetValues/VecSetValues patterns, or proper MatAssembly/VecAssembly usage."
+        }
+      ]
+    }
+  ]
+}
