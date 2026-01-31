@@ -7,10 +7,37 @@ on:
         description: "Which matrix config to run"
         type: choice
         required: true
-        options: [gemini3, gpt52, all]
+        options:
+          - gemini3
+          - gpt52
+          - all
 
 jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Set matrix based on input
+        id: set-matrix
+        run: |
+          GEMINI3='{"name":"gemini3","purple_llm":"gemini/gemini-3-flash-preview","api_base_url":"","purple_id":"019bc7e4-c94c-7f73-86a3-edb2d6affc73"}'
+          GPT52='{"name":"gpt52","purple_llm":"openai/gpt-5.2","api_base_url":"https://api.asksage.anl.gov/server/v1","purple_id":"019c10bb-6ee1-71e1-bc40-a606ebb7e9e0"}'
+
+          case "${{ inputs.config }}" in
+            gemini3)
+              echo "matrix={\"include\":[$GEMINI3]}" >> $GITHUB_OUTPUT
+              ;;
+            gpt52)
+              echo "matrix={\"include\":[$GPT52]}" >> $GITHUB_OUTPUT
+              ;;
+            all)
+              echo "matrix={\"include\":[$GEMINI3,$GPT52]}" >> $GITHUB_OUTPUT
+              ;;
+          esac
+
   run:
+    needs: setup
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -18,16 +45,7 @@ jobs:
 
     strategy:
       fail-fast: false
-      matrix:
-        include:
-          - name: "gemini3"
-            purple_llm: "gemini/gemini-3-flash-preview"
-            api_base_url: ""
-            purple_id: "019bc7e4-c94c-7f73-86a3-edb2d6affc73"
-          - name: "gpt52"
-            purple_llm: "openai/gpt-5.2"
-            api_base_url: "https://api.asksage.anl.gov/server/v1"
-            purple_id: "019c10bb-6ee1-71e1-bc40-a606ebb7e9e0"
+      matrix: ${{ fromJson(needs.setup.outputs.matrix) }}
 
     steps:
       - name: Checkout
@@ -55,14 +73,14 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Save SSL certificate
+        env:
+          ASKSAGE_SSL: ${{ secrets.ASKSAGE_SSL }}
         run: |
           if [ -n "$ASKSAGE_SSL" ]; then
             echo "$ASKSAGE_SSL" > asksage_ssl_cert.pem
           else
             touch asksage_ssl_cert.pem
           fi
-        env:
-          ASKSAGE_SSL: ${{ secrets.ASKSAGE_SSL }}
 
       - name: Run assessment
         env:
@@ -72,7 +90,10 @@ jobs:
           GREEN_AGENT_LLM: "gemini/gemini-3-flash-preview"
           PURPLE_AGENT_LLM: ${{ matrix.purple_llm }}
           PURPLE_ID: ${{ matrix.purple_id }}
-          PURPLE_AGENT_CMD: ${{ matrix.api_base_url != '' && format('--host 0.0.0.0 --port 9002 --card-url http://purple-agent:9002 --agent-llm {0} --api-base-url {1}', matrix.purple_llm, matrix.api_base_url) || format('--host 0.0.0.0 --port 9002 --card-url http://purple-agent:9002 --agent-llm {0}', matrix.purple_llm) }}
+          PURPLE_AGENT_CMD: >-
+            ${{ matrix.api_base_url != '' 
+                && format('--host 0.0.0.0 --port 9002 --card-url http://purple-agent:9002 --agent-llm {0} --api-base-url {1}', matrix.purple_llm, matrix.api_base_url) 
+                || format('--host 0.0.0.0 --port 9002 --card-url http://purple-agent:9002 --agent-llm {0}', matrix.purple_llm) }}
         run: |
           echo "Testing Purple Agent with LLM: $PURPLE_AGENT_LLM"
           echo "API Base URL: ${{ matrix.api_base_url }}"
