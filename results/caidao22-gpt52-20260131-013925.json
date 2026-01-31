@@ -1,0 +1,740 @@
+{
+  "agent": "019c10bb-6ee1-71e1-bc40-a606ebb7e9e0",
+  "summary": {
+    "total": 6,
+    "runs_count": 4,
+    "failure_count": 2,
+    "avg_time_sec": 32.33898516496023,
+    "avg_composite_score": 35.99484906245842,
+    "tier_distribution": {
+      "GOLD": 0,
+      "SILVER": 1,
+      "BRONZE": 1,
+      "FAIL": 4
+    }
+  },
+  "results": [
+    {
+      "problem_name": "Rosenbrock_banana_function",
+      "problem_id": "3",
+      "runs": false,
+      "time_used_sec": 14.367225885391235,
+      "compiles": false,
+      "stdout": null,
+      "stderr": null,
+      "cli_args": "-tao_type blmvm -tao_monitor",
+      "compile_stdout": "/petsc/arch-linux-x64-opt/bin/mpicc -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -O2 -march=x86-64  -I/petsc/include -I/petsc/arch-linux-x64-opt/include     -Wl,-export-dynamic Rosenbrock_banana_function.c   -Wl,-rpath,/petsc/arch-linux-x64-opt/lib -L/petsc/arch-linux-x64-opt/lib -lpetsc -lf2clapack -lf2cblas -lm -lX11 -lstdc++  -o Rosenbrock_banana_function\n",
+      "compile_stderr": "In file included from /petsc/include/petscsys.h:1353,\n                 from /petsc/include/petscvec.h:8,\n                 from /petsc/include/petscmat.h:6,\n                 from /petsc/include/petscpc.h:6,\n                 from /petsc/include/petscksp.h:6,\n                 from /petsc/include/petscsnes.h:6,\n                 from /petsc/include/petsctao.h:3,\n                 from Rosenbrock_banana_function.c:16:\nRosenbrock_banana_function.c: In function \u2018main\u2019:\nRosenbrock_banana_function.c:91:34: warning: passing argument 2 of \u2018TaoGetObjective\u2019 from incompatible pointer type [-Wincompatible-pointer-types]\n   91 |   PetscCall(TaoGetObjective(tao, &f));\n      |                                  ^~\n      |                                  |\n      |                                  PetscReal * {aka double *}\n/petsc/include/petscerror.h:558:28: note: in definition of macro \u2018PetscCall\u2019\n  558 |       ierr_petsc_call_q_ = __VA_ARGS__; \\\n      |                            ^~~~~~~~~~~\n/petsc/include/petsctao.h:331:50: note: expected \u2018PetscErrorCode (**)(struct _p_Tao *, struct _p_Vec *, PetscReal *, void *)\u2019 {aka \u2018int (**)(struct _p_Tao *, struct _p_Vec *, double *, void *)\u2019} but argument is of type \u2018PetscReal *\u2019 {aka \u2018double *\u2019}\n  331 | PETSC_EXTERN PetscErrorCode TaoGetObjective(Tao, PetscErrorCode (**)(Tao, Vec, PetscReal *, void *), void **);\n      |                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nRosenbrock_banana_function.c:91:13: error: too few arguments to function \u2018TaoGetObjective\u2019\n   91 |   PetscCall(TaoGetObjective(tao, &f));\n      |             ^~~~~~~~~~~~~~~\n/petsc/include/petscerror.h:558:28: note: in definition of macro \u2018PetscCall\u2019\n  558 |       ierr_petsc_call_q_ = __VA_ARGS__; \\\n      |                            ^~~~~~~~~~~\n/petsc/include/petsctao.h:331:29: note: declared here\n  331 | PETSC_EXTERN PetscErrorCode TaoGetObjective(Tao, PetscErrorCode (**)(Tao, Vec, PetscReal *, void *), void **);\n      |                             ^~~~~~~~~~~~~~~\nmake: *** [/petsc/lib/petsc/conf/rules:218: Rosenbrock_banana_function] Error 1\n",
+      "composite_score": 0.0,
+      "tier": "FAIL",
+      "category_scores": null,
+      "evaluation_summary": {
+        "error": "Exception with tool make: A nonzero returncode 2 from the tool"
+      },
+      "evaluation_details": null
+    },
+    {
+      "problem_name": "Advection_PDE",
+      "problem_id": "2",
+      "runs": true,
+      "time_used_sec": 25.368953227996826,
+      "compiles": true,
+      "stdout": "Final solution at t=1. (N=100, c=1., dt=0.005):\nVec Object: 1 MPI process\n  type: seq\n0.0291775\n0.080633\n0.13177\n0.182388\n0.232285\n0.281266\n0.329137\n0.375708\n0.420798\n0.464226\n0.505822\n0.545422\n0.58287\n0.618017\n0.650725\n0.680865\n0.708318\n0.732975\n0.75474\n0.773527\n0.78926\n0.801879\n0.811333\n0.817585\n0.82061\n0.820397\n0.816946\n0.810271\n0.800398\n0.787366\n0.771227\n0.752045\n0.729894\n0.704863\n0.67705\n0.646565\n0.613528\n0.57807\n0.540331\n0.500459\n0.458612\n0.414955\n0.369661\n0.322907\n0.27488\n0.225767\n0.175764\n0.125066\n0.0738756\n0.0223932\n-0.0291775\n-0.080633\n-0.13177\n-0.182388\n-0.232285\n-0.281266\n-0.329137\n-0.375708\n-0.420798\n-0.464226\n-0.505822\n-0.545422\n-0.58287\n-0.618017\n-0.650725\n-0.680865\n-0.708318\n-0.732975\n-0.75474\n-0.773527\n-0.78926\n-0.801879\n-0.811333\n-0.817585\n-0.82061\n-0.820397\n-0.816946\n-0.810271\n-0.800398\n-0.787366\n-0.771227\n-0.752045\n-0.729894\n-0.704863\n-0.67705\n-0.646565\n-0.613528\n-0.57807\n-0.540331\n-0.500459\n-0.458612\n-0.414955\n-0.369661\n-0.322907\n-0.27488\n-0.225767\n-0.175764\n-0.125066\n-0.0738756\n-0.0223932\n",
+      "stderr": "",
+      "cli_args": "-ts_type rk -ts_rk_type 3bs -ts_adapt_type none",
+      "compile_stdout": "/petsc/arch-linux-x64-opt/bin/mpicc -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -O2 -march=x86-64  -I/petsc/include -I/petsc/arch-linux-x64-opt/include     -Wl,-export-dynamic Advection_PDE.c   -Wl,-rpath,/petsc/arch-linux-x64-opt/lib -L/petsc/arch-linux-x64-opt/lib -lpetsc -lf2clapack -lf2cblas -lm -lX11 -lstdc++  -o Advection_PDE\n",
+      "compile_stderr": "",
+      "composite_score": 38.691546977008606,
+      "tier": "FAIL",
+      "category_scores": {
+        "correctness": 2.2135517428433107e-12,
+        "performance": 50.783152686225044,
+        "code_quality": 76.66666666666666,
+        "algorithm": 90.0,
+        "petsc": 60.74074074074074
+      },
+      "evaluation_summary": {
+        "total_evaluators": 14,
+        "passed_evaluators": 9,
+        "failed_evaluators": 4,
+        "all_gates_passed": true,
+        "gates_passed": 4,
+        "gates_total": 4
+      },
+      "evaluation_details": [
+        {
+          "name": "compilation",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code compiled successfully"
+        },
+        {
+          "name": "execution",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code executed successfully"
+        },
+        {
+          "name": "memory_safety",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 0.7,
+          "feedback": "Basic memory safety check (valgrind not available)"
+        },
+        {
+          "name": "api_usage",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "All basic PETSc API requirements met"
+        },
+        {
+          "name": "numerical_accuracy",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": false,
+          "score": 2.2135517428433106e-14,
+          "raw_value": 0.03144159295296939,
+          "confidence": 1.0,
+          "feedback": "Acceptable accuracy: error = 3.14e-02 (threshold: 1.00e-03)"
+        },
+        {
+          "name": "execution_time",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.5078315268622504,
+          "raw_value": 25.368953227996826,
+          "confidence": 1.0,
+          "feedback": "Poor performance: 25.369s (15.0s - 60.0s)"
+        },
+        {
+          "name": "error_handling",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": false,
+          "score": 0.3,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Poor error handling: only 0 CHKERRQ calls"
+        },
+        {
+          "name": "parallel_awareness",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": true,
+          "score": 1.0,
+          "raw_value": null,
+          "confidence": 0.8,
+          "feedback": "Parallel features: Uses PETSC_COMM_WORLD, Rank-aware code, Parallel-aware sizing"
+        },
+        {
+          "name": "readability",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.9,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The code is exceptionally well-written for a scientific computing example. It follows PETSc best practices, uses modern error handling (PetscCall), and provides clear mathematical context. The logic is linear and easy to follow, though the manual handling of periodic indices and sequential vector assumptions slightly limits its scalability as a template."
+        },
+        {
+          "name": "code_style",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": false,
+          "score": 0.5,
+          "raw_value": null,
+          "confidence": 0.0,
+          "feedback": "LLM evaluation failed: litellm.InternalServerError: litellm.InternalServerError: geminiException - {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"The model is overloaded. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
+        },
+        {
+          "name": "documentation",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.9,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The documentation is exceptionally thorough for a single-file example. It includes a comprehensive header block detailing the PDE, discretization scheme, build instructions, and runtime commands. The logic behind the CFL condition and PETSc-specific tolerance settings is well-explained. While the RHSFunction lacks a formal Doxygen-style block, its purpose and parameters are clearly described in the header and contextually within the code."
+        },
+        {
+          "name": "algorithm_appropriateness",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.9,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The approach is highly appropriate for the problem requirements. Using PETSc's TS (Time Stepper) framework is the standard way to solve time-dependent PDEs in this library. The first-order upwind scheme is the most stable basic discretization for linear advection, and the implementation correctly handles periodic boundary conditions using the modulo operator. The use of an AppCtx struct to pass parameters to the RHS function is a best practice in PETSc. The only minor drawback is that first-order upwind is highly diffusive, but it is the most robust choice for a 'first-order' requirement."
+        },
+        {
+          "name": "solver_choice",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": null,
+          "score": null,
+          "raw_value": null,
+          "confidence": 0.0,
+          "feedback": "LLM evaluation failed: litellm.InternalServerError: litellm.InternalServerError: geminiException - {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"The model is overloaded. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
+        },
+        {
+          "name": "petsc_best_practices",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": false,
+          "score": 0.6,
+          "raw_value": null,
+          "confidence": 0.9,
+          "feedback": "The code correctly uses the TS (Time-Stepper) framework and follows standard PETSc error handling (PetscCall, PetscFunctionBeginUser). However, it fails to use DM (Distributed Management) objects like DMDA, which are best practice for structured grids and would handle periodic boundary conditions and parallel ghost cell exchanges automatically. The RHS function uses raw array access (VecGetArray) which is fine for serial, but lacks the scalability of VecGetArrayRead/Write on distributed vectors. It also lacks explicit PetscViewer integration for output and does not show the use of PetscOptionsBegin/End for custom context parameters."
+        }
+      ]
+    },
+    {
+      "problem_name": "DarcyFlow2D_Steady",
+      "problem_id": "6",
+      "runs": true,
+      "time_used_sec": 41.911564111709595,
+      "compiles": true,
+      "stdout": "5.154234499907431e-03\n",
+      "stderr": "",
+      "cli_args": "-nx 40 -ny 40 -ksp_type cg -pc_type gamg -ksp_rtol 1e-10",
+      "compile_stdout": "/petsc/arch-linux-x64-opt/bin/mpicc -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -O2 -march=x86-64  -I/petsc/include -I/petsc/arch-linux-x64-opt/include     -Wl,-export-dynamic DarcyFlow2D_Steady.c   -Wl,-rpath,/petsc/arch-linux-x64-opt/lib -L/petsc/arch-linux-x64-opt/lib -lpetsc -lf2clapack -lf2cblas -lm -lX11 -lstdc++  -o DarcyFlow2D_Steady\n",
+      "compile_stderr": "",
+      "composite_score": 35.85780526219264,
+      "tier": "FAIL",
+      "category_scores": {
+        "correctness": 0.0,
+        "performance": 36.07860967848036,
+        "code_quality": 73.22033898305085,
+        "algorithm": 89.99999999999999,
+        "petsc": 59.62962962962963
+      },
+      "evaluation_summary": {
+        "total_evaluators": 14,
+        "passed_evaluators": 11,
+        "failed_evaluators": 3,
+        "all_gates_passed": true,
+        "gates_passed": 4,
+        "gates_total": 4
+      },
+      "evaluation_details": [
+        {
+          "name": "compilation",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code compiled successfully"
+        },
+        {
+          "name": "execution",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code executed successfully"
+        },
+        {
+          "name": "memory_safety",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 0.7,
+          "feedback": "Basic memory safety check (valgrind not available)"
+        },
+        {
+          "name": "api_usage",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "All basic PETSc API requirements met"
+        },
+        {
+          "name": "numerical_accuracy",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": false,
+          "score": 0.0,
+          "raw_value": null,
+          "confidence": 0.5,
+          "feedback": "Error computing accuracy: Unsupported expected_output type: <class 'str'>"
+        },
+        {
+          "name": "execution_time",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.3607860967848036,
+          "raw_value": 41.911564111709595,
+          "confidence": 1.0,
+          "feedback": "Poor performance: 41.912s (15.0s - 60.0s)"
+        },
+        {
+          "name": "error_handling",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": false,
+          "score": 0.3,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Poor error handling: only 37 CHKERRQ calls"
+        },
+        {
+          "name": "parallel_awareness",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.85,
+          "raw_value": null,
+          "confidence": 0.8,
+          "feedback": "Parallel features: Uses PETSC_COMM_WORLD, Parallel-aware sizing"
+        },
+        {
+          "name": "readability",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.9,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The code is exceptionally well-organized for a scientific C program. It follows PETSc conventions closely and provides clear mathematical context for the discretization steps. The logic is linear and easy to follow, though the manual assembly loop is slightly repetitive."
+        },
+        {
+          "name": "code_style",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.8,
+          "raw_value": null,
+          "confidence": 0.95,
+          "feedback": "The code is well-structured and correctly uses PETSc types and error handling. It follows standard PETSc idioms for matrix assembly and KSP setup. However, it uses some outdated error handling macros and lacks full parallel scalability due to the use of sequential matrix/vector types."
+        },
+        {
+          "name": "documentation",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": false,
+          "score": 0.5,
+          "raw_value": null,
+          "confidence": 0.0,
+          "feedback": "LLM evaluation failed: litellm.InternalServerError: litellm.InternalServerError: geminiException - {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"The model is overloaded. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
+        },
+        {
+          "name": "algorithm_appropriateness",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.9,
+          "raw_value": null,
+          "confidence": 0.95,
+          "feedback": "The approach of using a conforming P1 finite element method on a structured triangulation is highly appropriate for the 2D Darcy flow equation. Manual assembly of the stiffness matrix and load vector is a standard pedagogical and practical strategy for small-to-medium scale problems in PETSc. The choice of KSP (CG) with MG/Hypre preconditioning is the industry standard for elliptic PDEs. The use of one-point quadrature for the source term is acceptable for P1 elements, though higher-order quadrature would be more robust for the Gaussian source. The strong enforcement of Dirichlet conditions via row-modification is the standard PETSc approach."
+        },
+        {
+          "name": "solver_choice",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.9,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The code correctly identifies the problem as a linear elliptic PDE and utilizes the KSP (Krylov Subspace Solver) interface. Since the Darcy flow equation with a conforming FEM discretization results in a symmetric positive definite (SPD) matrix, the choice of Conjugate Gradient (CG) with a preconditioner like Algebraic Multigrid (hypre) mentioned in the comments is the gold standard for scalability. The implementation allows command-line overrides, which is best practice in PETSc."
+        },
+        {
+          "name": "petsc_best_practices",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.7,
+          "raw_value": null,
+          "confidence": 0.9,
+          "feedback": "The code follows several PETSc best practices, such as using KSP for linear solvers which allows runtime configuration of solvers and preconditioners via the command line. It correctly uses PETSc types (PetscReal, PetscErrorCode). However, it lacks the use of PetscViewer for output, opting for standard C printing instead. The manual assembly of the stiffness matrix is standard for custom FEM but could benefit from DMDA or DMPlex for better scalability and abstraction. The provided snippet is incomplete, but the build/run instructions suggest proper integration with the PETSc options database."
+        }
+      ]
+    },
+    {
+      "problem_name": "Robertson_ODE",
+      "problem_id": "1",
+      "runs": true,
+      "time_used_sec": 28.706916332244873,
+      "compiles": true,
+      "stdout": "** PETSc DEPRECATION WARNING ** : the option -ts_dt is deprecated as of version 3.25 and will be removed in a future release.\n   Use the option -ts_time_step instead. (Silence this warning with -options_suppress_deprecated_warnings)\nFinal solution at t = 0.\ntfinal = 9.989999999999860e+01\nVec Object: 1 MPI process\n  type: seq\n0.616791\n6.14293e-06\n0.383202\n",
+      "stderr": "",
+      "cli_args": "-ts_type cn -ts_max_time 100 -ts_max_steps 999 -ts_dt 0.1 -ts_adapt_type none -snes_rtol 1e-10 -snes_atol 1e-12",
+      "compile_stdout": "/petsc/arch-linux-x64-opt/bin/mpicc -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -O2 -march=x86-64  -I/petsc/include -I/petsc/arch-linux-x64-opt/include     -Wl,-export-dynamic Robertson_ODE.c   -Wl,-rpath,/petsc/arch-linux-x64-opt/lib -L/petsc/arch-linux-x64-opt/lib -lpetsc -lf2clapack -lf2cblas -lm -lX11 -lstdc++  -o Robertson_ODE\n",
+      "compile_stderr": "",
+      "composite_score": 60.576274712655234,
+      "tier": "BRONZE",
+      "category_scores": {
+        "correctness": 87.08389180700894,
+        "performance": 47.8160743713379,
+        "code_quality": 63.33333333333333,
+        "algorithm": 49.743589743589745,
+        "petsc": 59.62962962962963
+      },
+      "evaluation_summary": {
+        "total_evaluators": 14,
+        "passed_evaluators": 9,
+        "failed_evaluators": 5,
+        "all_gates_passed": true,
+        "gates_passed": 4,
+        "gates_total": 4
+      },
+      "evaluation_details": [
+        {
+          "name": "compilation",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code compiled successfully"
+        },
+        {
+          "name": "execution",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code executed successfully"
+        },
+        {
+          "name": "memory_safety",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 0.7,
+          "feedback": "Basic memory safety check (valgrind not available)"
+        },
+        {
+          "name": "api_usage",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "All basic PETSc API requirements met"
+        },
+        {
+          "name": "numerical_accuracy",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.8708389180700894,
+          "raw_value": 0.00013829825830290467,
+          "confidence": 1.0,
+          "feedback": "Excellent accuracy: error = 1.38e-04 (threshold: 1.00e-03)"
+        },
+        {
+          "name": "execution_time",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.47816074371337897,
+          "raw_value": 28.706916332244873,
+          "confidence": 1.0,
+          "feedback": "Poor performance: 28.707s (15.0s - 60.0s)"
+        },
+        {
+          "name": "error_handling",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": false,
+          "score": 0.3,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Poor error handling: only 0 CHKERRQ calls"
+        },
+        {
+          "name": "parallel_awareness",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.85,
+          "raw_value": null,
+          "confidence": 0.8,
+          "feedback": "Parallel features: Uses PETSC_COMM_WORLD, Parallel-aware sizing"
+        },
+        {
+          "name": "readability",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": false,
+          "score": 0.5,
+          "raw_value": null,
+          "confidence": 0.0,
+          "feedback": "LLM evaluation failed: litellm.InternalServerError: litellm.InternalServerError: geminiException - {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"The model is overloaded. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
+        },
+        {
+          "name": "code_style",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.9,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The code demonstrates excellent adherence to modern PETSc (v3.14+) standards, specifically using the PetscCall() macro and the PetscFunctionBeginUser/Return(PETSC_SUCCESS) pattern. It correctly handles the IFunction/IJacobian interface and uses the AppCtx pattern for user-defined parameters."
+        },
+        {
+          "name": "documentation",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": false,
+          "score": 0.5,
+          "raw_value": null,
+          "confidence": 0.0,
+          "feedback": "LLM evaluation failed: litellm.InternalServerError: litellm.InternalServerError: geminiException - {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"The model is overloaded. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
+        },
+        {
+          "name": "algorithm_appropriateness",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": false,
+          "score": 0.6,
+          "raw_value": null,
+          "confidence": 0.95,
+          "feedback": "The Robertson problem is a classic benchmark for 'stiff' ODEs, characterized by reaction rates spanning several orders of magnitude (0.04 to 3e7). While the implementation correctly uses PETSc's TS (Time Stepper) framework and the IFunction/IJacobian interface for implicit solvers, the choice of the Crank-Nicolson (CN) method is suboptimal. CN is A-stable but not L-stable, meaning it can suffer from persistent oscillations when solving highly stiff systems with large time steps. Furthermore, the code snippet suggests disabling adaptivity (-ts_adapt_type none), which is dangerous for this specific problem because the solution requires extremely small steps initially to capture the fast transient of y2, but can take much larger steps later. A BDF (Backward Differentiation Formula) or Rosenbrock-type method with adaptive time-stepping is the standard and more efficient approach for this problem."
+        },
+        {
+          "name": "solver_choice",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": false,
+          "score": 0.4,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The code correctly identifies TS (Time Stepper) as the appropriate PETSc object for ODEs. However, the specific choice of the Crank-Nicolson (CN) method for the Robertson problem is poor. The Robertson problem is a classic example of a 'stiff' ODE system with time scales varying by several orders of magnitude (0.04 vs 3e7). While CN is A-stable, it is not L-stable and is prone to oscillations for stiff problems. Furthermore, the prompt requires solving to t=100 in under 1000 steps; with a fixed-step CN method (as suggested by the run comments), the solver will likely fail to converge or produce inaccurate results unless an extremely small time step is used. A BDF (Backward Differentiation Formula) or Rosenbrock method with adaptive time-stepping is the standard industry choice for this specific problem."
+        },
+        {
+          "name": "petsc_best_practices",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.7,
+          "raw_value": null,
+          "confidence": 0.9,
+          "feedback": "The code follows several core PETSc best practices, such as using the TS (Time Stepper) abstraction, employing PetscCall for error handling, and utilizing PetscFunctionBeginUser/Return. It correctly implements the IFunction interface for implicit solvers. However, it is incomplete (truncated at the IJacobian definition), lacks explicit PetscViewer integration for monitoring results, and relies on hardcoded initial conditions rather than allowing full runtime configuration of the AppCtx parameters via the options database. While it mentions command-line flags in the comments, the code itself does not show the TSSetFromOptions() call which is critical for runtime configurability."
+        }
+      ]
+    },
+    {
+      "problem_name": "scatter_vecmpi",
+      "problem_id": "4",
+      "runs": true,
+      "time_used_sec": 9.331299066543579,
+      "compiles": true,
+      "stdout": "Gathered y on rank 0 (x scaled by 2):\nVec Object: 1 MPI process\n  type: seq\n2.\n4.\n6.\n8.\n10.\n12.\n14.\n16.\n18.\n20.\n",
+      "stderr": "",
+      "cli_args": "-N 10",
+      "compile_stdout": "/petsc/arch-linux-x64-opt/bin/mpicc -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -O2 -march=x86-64  -I/petsc/include -I/petsc/arch-linux-x64-opt/include     -Wl,-export-dynamic scatter_vecmpi.c   -Wl,-rpath,/petsc/arch-linux-x64-opt/lib -L/petsc/arch-linux-x64-opt/lib -lpetsc -lf2clapack -lf2cblas -lm -lX11 -lstdc++  -o scatter_vecmpi\n",
+      "compile_stderr": "",
+      "composite_score": 80.84346742289407,
+      "tier": "SILVER",
+      "category_scores": {
+        "correctness": 100.0,
+        "performance": 71.33740186691284,
+        "code_quality": 86.66666666666667,
+        "algorithm": 100.0,
+        "petsc": 71.42857142857143
+      },
+      "evaluation_summary": {
+        "total_evaluators": 14,
+        "passed_evaluators": 12,
+        "failed_evaluators": 1,
+        "all_gates_passed": true,
+        "gates_passed": 4,
+        "gates_total": 4
+      },
+      "evaluation_details": [
+        {
+          "name": "compilation",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code compiled successfully"
+        },
+        {
+          "name": "execution",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code executed successfully"
+        },
+        {
+          "name": "memory_safety",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 0.7,
+          "feedback": "Basic memory safety check (valgrind not available)"
+        },
+        {
+          "name": "api_usage",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "All basic PETSc API requirements met"
+        },
+        {
+          "name": "numerical_accuracy",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": true,
+          "score": 1.0,
+          "raw_value": 0.0,
+          "confidence": 1.0,
+          "feedback": "Excellent accuracy: error = 0.00e+00 (threshold: 1.00e-03)"
+        },
+        {
+          "name": "execution_time",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.7133740186691284,
+          "raw_value": 9.331299066543579,
+          "confidence": 1.0,
+          "feedback": "Acceptable performance: 9.331s (5.0s - 15.0s)"
+        },
+        {
+          "name": "error_handling",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": false,
+          "score": 0.3,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Poor error handling: only 0 CHKERRQ calls"
+        },
+        {
+          "name": "parallel_awareness",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": true,
+          "score": 1.0,
+          "raw_value": null,
+          "confidence": 0.8,
+          "feedback": "Parallel features: Uses PETSC_COMM_WORLD, Rank-aware code, Parallel-aware sizing"
+        },
+        {
+          "name": "readability",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.9,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The code is exceptionally clean and follows PETSc best practices. It uses modern error handling (PetscCall), maintains a logical flow, and provides clear documentation for each step of the MPI communication process."
+        },
+        {
+          "name": "code_style",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.9,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The code demonstrates excellent adherence to modern PETSc coding standards, specifically utilizing the modern PetscCall() error handling macros and correct object lifecycle management."
+        },
+        {
+          "name": "documentation",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.8,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The code is well-documented for a small script. It includes a clear header explaining the purpose, execution instructions, and logic flow. Inline comments effectively break down the PETSc-specific operations (creation, assembly, scattering). However, it lacks formal Doxygen-style function headers for main, and while the logic is clear, it doesn't explicitly explain the 'VecScatterCreateToZero' mechanism for users unfamiliar with PETSc's collective communication."
+        },
+        {
+          "name": "algorithm_appropriateness",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 1.0,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The code correctly implements the PETSc API for the requested task. It uses VecGetOwnershipRange to handle parallel distribution, VecScale for the arithmetic operation, and VecScatterCreateToZero which is the most efficient and idiomatic way to gather a distributed vector to a single process for sequential viewing. The use of PETSC_VIEWER_STDOUT_SELF on rank 0 ensures the output is handled correctly by the local process."
+        },
+        {
+          "name": "solver_choice",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": null,
+          "score": null,
+          "raw_value": null,
+          "confidence": 0.0,
+          "feedback": "LLM evaluation failed: litellm.InternalServerError: litellm.InternalServerError: geminiException - {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"The model is overloaded. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
+        },
+        {
+          "name": "petsc_best_practices",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.9,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The code follows PETSc best practices very well. It uses the modern PetscCall error handling, correctly manages ownership ranges for parallel vector assembly, and utilizes VecScatterCreateToZero for efficient data gathering. It correctly uses VecSetFromOptions to allow runtime type changes (e.g., -vec_type mpi/standard). The use of PetscPrintf and VecView with PETSC_VIEWER_STDOUT_SELF is the standard way to handle output on specific ranks. The only minor improvement would be using VecSetValues (plural) for better performance in larger loops, though VecSetValue is acceptable for this scale."
+        }
+      ]
+    },
+    {
+      "problem_name": "NS2D_FV_Implicit",
+      "problem_id": "5",
+      "runs": false,
+      "time_used_sec": 74.34795236587524,
+      "compiles": true,
+      "stdout": "** PETSc DEPRECATION WARNING ** : the option -ts_dt is deprecated as of version 3.25 and will be removed in a future release.\n   Use the option -ts_time_step instead. (Silence this warning with -options_suppress_deprecated_warnings)\n",
+      "stderr": "[0]PETSC ERROR: --------------------- Error Message --------------------------------------------------------------\n[0]PETSC ERROR: TSStep has failed due to DIVERGED_NONLINEAR_SOLVE, increase -ts_max_snes_failures or use unlimited to attempt recovery\n[0]PETSC ERROR: See https://petsc.org/release/faq/ for trouble shooting.\n[0]PETSC ERROR: PETSc Development Git Revision: 6720ef8fdc35fdcb6ad4d3d37b877c94dec44356 Git Date: 2026-01-12 19:31:14 +0000\n[0]PETSC ERROR: ./NS2D_FV_Implicit with 1 MPI process(es) and PETSC_ARCH arch-linux-x64-opt on c8e6d3c9c5f4 by Unknown Sat Jan 31 01:39:24 2026\n[0]PETSC ERROR: Configure options: --with-cxx-dialect=C++14 --with-debugging=0 COPTFLAGS=\"-O2 -march=x86-64\" CXXOPTFLAGS=\"-O2 -march=x86-64\" FOPTFLAGS=\"-O2 -march=x86-64\" --download-mpich --with-fc=0 --download-f2cblaslapack\n[0]PETSC ERROR: #1 TSStep() at /petsc/src/ts/interface/ts.c:3549\n[0]PETSC ERROR: #2 TSSolve() at /petsc/src/ts/interface/ts.c:4198\n[0]PETSC ERROR: #3 main() at NS2D_FV_Implicit.c:454\n[0]PETSC ERROR: PETSc Option Table entries:\n[0]PETSC ERROR: -ksp_max_it 200 (source: command line)\n[0]PETSC ERROR: -ksp_rtol 1e-8 (source: command line)\n[0]PETSC ERROR: -Nx 32 (source: command line)\n[0]PETSC ERROR: -Ny 32 (source: command line)\n[0]PETSC ERROR: -Re 100 (source: command line)\n[0]PETSC ERROR: -snes_atol 1e-10 (source: command line)\n[0]PETSC ERROR: -snes_max_it 30 (source: command line)\n[0]PETSC ERROR: -snes_rtol 1e-8 (source: command line)\n[0]PETSC ERROR: -ts_max_time 1.0 (source: command line)\n[0]PETSC ERROR: -ts_time_step 0.01 (source: code)\n[0]PETSC ERROR: -ts_type beuler (source: command line)\n[0]PETSC ERROR: ----------------End of Error Message -------send entire error message to petsc-maint@mcs.anl.gov----------\napplication called MPI_Abort(MPI_COMM_SELF, 91) - process 0\n[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=91 message=abort\n:\nsystem msg for write_line failure : Bad file descriptor\n",
+      "cli_args": "-Nx 32 -Ny 32 -Re 100 -ts_type beuler -ts_dt 0.01 -ts_max_time 1.0 -snes_rtol 1e-8 -snes_atol 1e-10 -ksp_rtol 1e-8 -ksp_max_it 200 -snes_max_it 30",
+      "compile_stdout": "/petsc/arch-linux-x64-opt/bin/mpicc -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -O2 -march=x86-64  -I/petsc/include -I/petsc/arch-linux-x64-opt/include     -Wl,-export-dynamic NS2D_FV_Implicit.c   -Wl,-rpath,/petsc/arch-linux-x64-opt/lib -L/petsc/arch-linux-x64-opt/lib -lpetsc -lf2clapack -lf2cblas -lm -lX11 -lstdc++  -o NS2D_FV_Implicit\n",
+      "compile_stderr": "NS2D_FV_Implicit.c: In function \u2018IFunction\u2019:\nNS2D_FV_Implicit.c:184:19: warning: unused variable \u2018uC\u2019 [-Wunused-variable]\n  184 |       PetscScalar uC = get_u(ctx,x,i,j);\n      |                   ^~\nNS2D_FV_Implicit.c:239:19: warning: unused variable \u2018vC\u2019 [-Wunused-variable]\n  239 |       PetscScalar vC = get_v(ctx,x,i,j);\n      |                   ^~\n",
+      "composite_score": 0.0,
+      "tier": "FAIL",
+      "category_scores": null,
+      "evaluation_summary": {
+        "error": "Exception with tool run_executable: A nonzero returncode 91 from the tool"
+      },
+      "evaluation_details": null
+    }
+  ]
+}
