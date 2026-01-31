@@ -12,6 +12,17 @@ A benchmarking framework for evaluating AI agents against the PetscAgent benchma
    - **gpt52** – Run with GPT-5.2 (via AskSage)
    - **all** – Run both configurations in parallel
 
+> **⚠️ Warning:** Each benchmark run consumes a significant amount of LLM tokens. Monitor your API usage and costs accordingly.
+
+### Required Docker Images
+
+The benchmark uses the following Docker images from GitHub Container Registry:
+
+- ghcr.io/caidao22/petscagent-bench-green-agent:latest
+- ghcr.io/caidao22/petscagent-bench-purple-agent:latest
+- ghcr.io/caidao22/petscagent-bench-petsc-mcp-servers:latest
+- ghcr.io/caidao22/petscagent-bench-client-cli:latest
+
 ## Submitting Results
 
 After a successful benchmark run:
