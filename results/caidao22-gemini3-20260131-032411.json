@@ -1,0 +1,436 @@
+{
+  "agent": "019bc7e4-c94c-7f73-86a3-edb2d6affc73",
+  "summary": {
+    "total": 6,
+    "runs_count": 2,
+    "failure_count": 4,
+    "avg_time_sec": 8.268746058146158,
+    "avg_composite_score": 19.469182752279973,
+    "tier_distribution": {
+      "GOLD": 0,
+      "SILVER": 1,
+      "BRONZE": 0,
+      "FAIL": 5
+    }
+  },
+  "results": [
+    {
+      "problem_name": "Rosenbrock_banana_function",
+      "problem_id": "3",
+      "runs": false,
+      "time_used_sec": 2.489560127258301,
+      "compiles": false,
+      "stdout": null,
+      "stderr": null,
+      "cli_args": null,
+      "compile_stdout": null,
+      "compile_stderr": null,
+      "composite_score": 0.0,
+      "tier": "FAIL",
+      "category_scores": null,
+      "evaluation_summary": {
+        "error": "Could not parse purple agent response. Probably failed to generate the code."
+      },
+      "evaluation_details": null
+    },
+    {
+      "problem_name": "Advection_PDE",
+      "problem_id": "2",
+      "runs": true,
+      "time_used_sec": 9.259753227233887,
+      "compiles": true,
+      "stdout": "0 TS dt 0.001 time 0.\n1 TS dt 0.01 time 0.001\n2 TS dt 0.0300136 time 0.011\n3 TS dt 0.029903 time 0.0410136\n4 TS dt 0.0299501 time 0.0709167\n5 TS dt 0.0299956 time 0.100867\n6 TS dt 0.0300415 time 0.130862\n7 TS dt 0.0300878 time 0.160904\n8 TS dt 0.0301344 time 0.190992\n9 TS dt 0.0301814 time 0.221126\n10 TS dt 0.030228 time 0.251307\n11 TS dt 0.0298053 time 0.281535\n12 TS dt 0.0205565 time 0.297241\n13 TS dt 0.0167328 time 0.311174\n14 TS dt 0.0150077 time 0.324635\n15 TS dt 0.014028 time 0.337672\n16 TS dt 0.0129199 time 0.3517\n17 TS dt 0.0117584 time 0.36462\n18 TS dt 0.0120095 time 0.376379\n19 TS dt 0.0130642 time 0.388388\n20 TS dt 0.0133228 time 0.401452\n21 TS dt 0.0125747 time 0.414775\n22 TS dt 0.0120556 time 0.42735\n23 TS dt 0.0123653 time 0.439405\n24 TS dt 0.0129203 time 0.451771\n25 TS dt 0.0129049 time 0.464691\n26 TS dt 0.0124536 time 0.477596\n27 TS dt 0.0122537 time 0.490049\n28 TS dt 0.0124985 time 0.502303\n29 TS dt 0.0127672 time 0.514802\n30 TS dt 0.0126897 time 0.527569\n31 TS dt 0.0124439 time 0.540259\n32 TS dt 0.0123986 time 0.552702\n33 TS dt 0.0125768 time 0.565101\n34 TS dt 0.012703 time 0.577678\n35 TS dt 0.0126254 time 0.590381\n36 TS dt 0.0125056 time 0.603006\n37 TS dt 0.0125101 time 0.615512\n38 TS dt 0.012602 time 0.628022\n39 TS dt 0.0126333 time 0.640624\n40 TS dt 0.0125676 time 0.653257\n41 TS dt 0.0125067 time 0.665825\n42 TS dt 0.0125259 time 0.678332\n43 TS dt 0.0125822 time 0.690857\n44 TS dt 0.0126034 time 0.70344\n45 TS dt 0.0125759 time 0.716043\n46 TS dt 0.0125546 time 0.728619\n47 TS dt 0.0125783 time 0.741174\n48 TS dt 0.0126192 time 0.753752\n49 TS dt 0.0126212 time 0.766371\n50 TS dt 0.0125896 time 0.778992\n51 TS dt 0.0125727 time 0.791582\n52 TS dt 0.012584 time 0.804154\n53 TS dt 0.0125931 time 0.816739\n54 TS dt 0.0125777 time 0.829332\n55 TS dt 0.0125525 time 0.841909\n56 TS dt 0.0125428 time 0.854462\n57 TS dt 0.0125494 time 0.867005\n58 TS dt 0.0125526 time 0.879554\n59 TS dt 0.0125461 time 0.892107\n60 TS dt 0.012541 time 0.904653\n61 TS dt 0.0125442 time 0.917194\n62 TS dt 0.012551 time 0.929738\n63 TS dt 0.0125582 time 0.942289\n64 TS dt 0.0125621 time 0.954847\n65 TS dt 0.0125618 time 0.967409\n66 TS dt 0.0125622 time 0.979971\n67 TS dt 0.0125721 time 0.992533\n68 TS dt 0.0125806 time 1.00511\nVec Object: 1 MPI process\n  type: seq\n-0.0232505\n0.0289672\n0.079612\n0.131399\n0.181235\n0.231738\n0.280025\n0.328395\n0.374428\n0.419839\n0.462963\n0.504626\n0.54423\n0.581429\n0.616924\n0.649075\n0.67985\n0.706551\n0.731964\n0.752992\n0.772421\n0.787662\n0.800617\n0.809956\n0.816177\n0.819448\n0.818928\n0.815932\n0.808856\n0.799462\n0.786098\n0.770341\n0.750956\n0.729084\n0.703935\n0.676381\n0.645756\n0.613062\n0.577355\n0.540093\n0.499852\n0.458585\n0.414502\n0.369801\n0.322661\n0.275141\n0.225768\n0.176113\n0.125335\n0.074297\n0.0229263\n-0.0286803\n-0.0798649\n-0.131176\n-0.181433\n-0.231563\n-0.280178\n-0.328265\n-0.374529\n-0.419778\n-0.462974\n-0.504678\n-0.544103\n-0.581639\n-0.61663\n-0.649447\n-0.679414\n-0.707029\n-0.731472\n-0.753468\n-0.77199\n-0.788027\n-0.800331\n-0.810159\n-0.816053\n-0.819507\n-0.818916\n-0.815916\n-0.808885\n-0.799435\n-0.786118\n-0.770329\n-0.750964\n-0.72907\n-0.703967\n-0.676316\n-0.645866\n-0.612894\n-0.577588\n-0.539793\n-0.500214\n-0.458169\n-0.414957\n-0.369321\n-0.323149\n-0.274658\n-0.226232\n-0.175677\n-0.125737\n-0.073934\n",
+      "stderr": "",
+      "cli_args": "-ts_monitor",
+      "compile_stdout": "/petsc/arch-linux-x64-opt/bin/mpicc -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -O2 -march=x86-64  -I/petsc/include -I/petsc/arch-linux-x64-opt/include     -Wl,-export-dynamic Advection_PDE.c   -Wl,-rpath,/petsc/arch-linux-x64-opt/lib -L/petsc/arch-linux-x64-opt/lib -lpetsc -lf2clapack -lf2cblas -lm -lX11 -lstdc++  -o Advection_PDE\n",
+      "compile_stderr": "",
+      "composite_score": 41.88429973715941,
+      "tier": "FAIL",
+      "category_scores": {
+        "correctness": 1.204271659319291e-12,
+        "performance": 71.48049354553223,
+        "code_quality": 80.17241379310346,
+        "algorithm": 90.0,
+        "petsc": 56.36363636363636
+      },
+      "evaluation_summary": {
+        "total_evaluators": 14,
+        "passed_evaluators": 11,
+        "failed_evaluators": 3,
+        "all_gates_passed": true,
+        "gates_passed": 4,
+        "gates_total": 4
+      },
+      "evaluation_details": [
+        {
+          "name": "compilation",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code compiled successfully"
+        },
+        {
+          "name": "execution",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code executed successfully"
+        },
+        {
+          "name": "memory_safety",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 0.7,
+          "feedback": "Basic memory safety check (valgrind not available)"
+        },
+        {
+          "name": "api_usage",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "All basic PETSc API requirements met"
+        },
+        {
+          "name": "numerical_accuracy",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": false,
+          "score": 1.2042716593192911e-14,
+          "raw_value": 0.03205031634981692,
+          "confidence": 1.0,
+          "feedback": "Acceptable accuracy: error = 3.21e-02 (threshold: 1.00e-03)"
+        },
+        {
+          "name": "execution_time",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.7148049354553222,
+          "raw_value": 9.259753227233887,
+          "confidence": 1.0,
+          "feedback": "Acceptable performance: 9.260s (5.0s - 15.0s)"
+        },
+        {
+          "name": "error_handling",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": false,
+          "score": 0.3,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Poor error handling: only 0 CHKERRQ calls"
+        },
+        {
+          "name": "parallel_awareness",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.85,
+          "raw_value": null,
+          "confidence": 0.8,
+          "feedback": "Parallel features: Uses PETSC_COMM_WORLD, Parallel-aware sizing"
+        },
+        {
+          "name": "readability",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.9,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The code is exceptionally clean and follows PETSc best practices for a simple 1D problem. It uses standard naming conventions and a logical structure that separates the physics (RHSFunction) from the solver setup (main)."
+        },
+        {
+          "name": "code_style",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.8,
+          "raw_value": null,
+          "confidence": 0.95,
+          "feedback": "The code is generally well-written and follows the core PETSc paradigms, such as using AppCtx for user data and the standard TS (Time-Stepper) workflow. However, it misses some idiomatic PETSc error handling and modern vector access patterns."
+        },
+        {
+          "name": "documentation",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.7,
+          "raw_value": null,
+          "confidence": 0.95,
+          "feedback": "The code is well-commented for a small script, clearly identifying the physics (1D Advection), the numerical scheme (Upwind), and the boundary conditions (Periodic). However, it lacks formal PETSc-style documentation headers for functions (e.g., documenting parameters and return values) and does not explain the 'AppCtx' struct members beyond simple inline notes. The main logic flow is clear, but more complex PETSc configurations like TSSetExactFinalTime are not explained for a novice user."
+        },
+        {
+          "name": "algorithm_appropriateness",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.9,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The approach is highly appropriate for the problem requirements. Using PETSc's TS (Time Stepper) library is the standard way to solve time-dependent PDEs in this framework. The first-order upwind scheme is numerically stable for the advection equation (given c > 0) and correctly implements the requested periodic boundary conditions using the modulo operator. The choice of Runge-Kutta (TSRK) is a robust explicit method for this type of hyperbolic problem. The only minor limitation is that first-order upwind is highly diffusive, but it was specifically requested in the prompt."
+        },
+        {
+          "name": "solver_choice",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.9,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The code correctly identifies TS (Time Stepper) as the appropriate PETSc module for a time-dependent PDE. It uses TSRK (Runge-Kutta), which is a standard and robust choice for hyperbolic problems like linear advection. The use of TSSetRHSFunction is appropriate for an explicit or semi-explicit formulation. While the problem is linear and could technically be solved with a linear TS (using TSSetRHSJacobian), the nonlinear interface (TSSetRHSFunction) is more flexible and commonly used in PETSc for such discretizations. The tolerances and time-stepping parameters are reasonable for a first-order upwind scheme."
+        },
+        {
+          "name": "petsc_best_practices",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": false,
+          "score": 0.6,
+          "raw_value": null,
+          "confidence": 0.95,
+          "feedback": "The code correctly implements the basic TS (Time-Stepping) framework and uses appropriate array accessors (VecGetArrayRead). However, it violates several PETSc best practices for scalability and flexibility. It uses hardcoded values for 'n', 'dt', and 't_final' instead of allowing them to be set via PetscOptionsGetInt/Real. It lacks the use of DMDA (Distributed Arrays), which is the standard best practice for structured grids to handle ghost point communication and parallelization automatically. While it uses VecView, it defaults to STDOUT rather than allowing runtime-configurable file output. The use of M_PI is non-portable; PETSc provides PETSC_PI."
+        }
+      ]
+    },
+    {
+      "problem_name": "DarcyFlow2D_Steady",
+      "problem_id": "6",
+      "runs": false,
+      "time_used_sec": 12.37409520149231,
+      "compiles": false,
+      "stdout": null,
+      "stderr": null,
+      "cli_args": "-petscspace_degree 1 -dm_refine 4 -ksp_type cg -pc_type gamg",
+      "compile_stdout": "/petsc/arch-linux-x64-opt/bin/mpicc -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -O2 -march=x86-64  -I/petsc/include -I/petsc/arch-linux-x64-opt/include     -Wl,-export-dynamic DarcyFlow2D_Steady.c   -Wl,-rpath,/petsc/arch-linux-x64-opt/lib -L/petsc/arch-linux-x64-opt/lib -lpetsc -lf2clapack -lf2cblas -lm -lX11 -lstdc++  -o DarcyFlow2D_Steady\n",
+      "compile_stderr": "DarcyFlow2D_Steady.c: In function \u2018main\u2019:\nDarcyFlow2D_Steady.c:50:3: error: unknown type name \u2018FEType\u2019; did you mean \u2018DMType\u2019?\n   50 |   FEType fe_type = PETSCFEBASIC;\n      |   ^~~~~~\n      |   DMType\nIn file included from /petsc/include/petscdmplex.h:11,\n                 from DarcyFlow2D_Steady.c:7:\n/petsc/include/petscfe.h:93:26: warning: initialization of \u2018int\u2019 from \u2018const char *\u2019 makes integer from pointer without a cast [-Wint-conversion]\n   93 | #define PETSCFEBASIC     \"basic\"\n      |                          ^~~~~~~\nDarcyFlow2D_Steady.c:50:20: note: in expansion of macro \u2018PETSCFEBASIC\u2019\n   50 |   FEType fe_type = PETSCFEBASIC;\n      |                    ^~~~~~~~~~~~\nDarcyFlow2D_Steady.c:52:3: error: unknown type name \u2018KSP\u2019\n   52 |   KSP ksp;\n      |   ^~~\nDarcyFlow2D_Steady.c:60:99: warning: passing argument 9 of \u2018DMPlexCreateBoxMesh\u2019 makes integer from pointer without a cast [-Wint-conversion]\n   60 |   ierr = DMPlexCreateBoxMesh(PETSC_COMM_WORLD, 2, PETSC_TRUE, NULL, NULL, NULL, NULL, PETSC_TRUE, &dm); CHKERRQ(ierr);\n      |                                                                                                   ^~~\n      |                                                                                                   |\n      |                                                                                                   struct _p_DM **\n/petsc/include/petscdmplex.h:181:171: note: expected \u2018PetscInt\u2019 {aka \u2018int\u2019} but argument is of type \u2018struct _p_DM **\u2019\n  181 | PETSC_EXTERN PetscErrorCode DMPlexCreateBoxMesh(MPI_Comm, PetscInt, PetscBool, const PetscInt[], const PetscReal[], const PetscReal[], const DMBoundaryType[], PetscBool, PetscInt, PetscBool, DM *);\n      |                                                                                                                                                                           ^~~~~~~~\nDarcyFlow2D_Steady.c:60:10: error: too few arguments to function \u2018DMPlexCreateBoxMesh\u2019\n   60 |   ierr = DMPlexCreateBoxMesh(PETSC_COMM_WORLD, 2, PETSC_TRUE, NULL, NULL, NULL, NULL, PETSC_TRUE, &dm); CHKERRQ(ierr);\n      |          ^~~~~~~~~~~~~~~~~~~\n/petsc/include/petscdmplex.h:181:29: note: declared here\n  181 | PETSC_EXTERN PetscErrorCode DMPlexCreateBoxMesh(MPI_Comm, PetscInt, PetscBool, const PetscInt[], const PetscReal[], const PetscReal[], const DMBoundaryType[], PetscBool, PetscInt, PetscBool, DM *);\n      |                             ^~~~~~~~~~~~~~~~~~~\nDarcyFlow2D_Steady.c:72:53: warning: passing argument 4 of \u2018DMAddBoundary\u2019 from incompatible pointer type [-Wincompatible-pointer-types]\n   72 |   ierr = DMAddBoundary(dm, DM_BC_ESSENTIAL, \"wall\", \"marker\", 0, 0, NULL, (void (*)(void))NULL, NULL, 4, ids, &user); CHKERRQ(ierr);\n      |                                                     ^~~~~~~~\n      |                                                     |\n      |                                                     const char *\nIn file included from /petsc/include/petscdmplex.h:8:\n/petsc/include/petscdm.h:442:86: note: expected \u2018DMLabel\u2019 {aka \u2018struct _p_DMLabel *\u2019} but argument is of type \u2018const char *\u2019\n  442 | PETSC_EXTERN PetscErrorCode DMAddBoundary(DM, DMBoundaryConditionType, const char[], DMLabel, PetscInt, const PetscInt[], PetscInt, PetscInt, const PetscInt[], PetscVoidFn *, PetscVoidFn *, void *, PetscInt *);\n      |                                                                                      ^~~~~~~\nDarcyFlow2D_Steady.c:72:69: warning: passing argument 7 of \u2018DMAddBoundary\u2019 makes integer from pointer without a cast [-Wint-conversion]\n   72 |   ierr = DMAddBoundary(dm, DM_BC_ESSENTIAL, \"wall\", \"marker\", 0, 0, NULL, (void (*)(void))NULL, NULL, 4, ids, &user); CHKERRQ(ierr);\n      |                                                                     ^~~~\n      |                                                                     |\n      |                                                                     void *\n/petsc/include/petscdm.h:442:123: note: expected \u2018PetscInt\u2019 {aka \u2018int\u2019} but argument is of type \u2018void *\u2019\n  442 | PETSC_EXTERN PetscErrorCode DMAddBoundary(DM, DMBoundaryConditionType, const char[], DMLabel, PetscInt, const PetscInt[], PetscInt, PetscInt, const PetscInt[], PetscVoidFn *, PetscVoidFn *, void *, PetscInt *);\n      |                                                                                                                           ^~~~~~~~\nDarcyFlow2D_Steady.c:72:75: warning: passing argument 8 of \u2018DMAddBoundary\u2019 makes integer from pointer without a cast [-Wint-conversion]\n   72 |   ierr = DMAddBoundary(dm, DM_BC_ESSENTIAL, \"wall\", \"marker\", 0, 0, NULL, (void (*)(void))NULL, NULL, 4, ids, &user); CHKERRQ(ierr);\n      |                                                                           ^\n      |                                                                           |\n      |                                                                           void (*)(void)\n/petsc/include/petscdm.h:442:133: note: expected \u2018PetscInt\u2019 {aka \u2018int\u2019} but argument is of type \u2018void (*)(void)\u2019\n  442 | PETSC_EXTERN PetscErrorCode DMAddBoundary(DM, DMBoundaryConditionType, const char[], DMLabel, PetscInt, const PetscInt[], PetscInt, PetscInt, const PetscInt[], PetscVoidFn *, PetscVoidFn *, void *, PetscInt *);\n      |                                                                                                                                     ^~~~~~~~\nDarcyFlow2D_Steady.c:72:103: warning: passing argument 10 of \u2018DMAddBoundary\u2019 makes pointer from integer without a cast [-Wint-conversion]\n   72 |   ierr = DMAddBoundary(dm, DM_BC_ESSENTIAL, \"wall\", \"marker\", 0, 0, NULL, (void (*)(void))NULL, NULL, 4, ids, &user); CHKERRQ(ierr);\n      |                                                                                                       ^\n      |                                                                                                       |\n      |                                                                                                       int\n/petsc/include/petscdm.h:442:161: note: expected \u2018void (*)(void)\u2019 but argument is of type \u2018int\u2019\n  442 | PETSC_EXTERN PetscErrorCode DMAddBoundary(DM, DMBoundaryConditionType, const char[], DMLabel, PetscInt, const PetscInt[], PetscInt, PetscInt, const PetscInt[], PetscVoidFn *, PetscVoidFn *, void *, PetscInt *);\n      |                                                                                                                                                                 ^~~~~~~~~~~~~\nDarcyFlow2D_Steady.c:72:106: warning: passing argument 11 of \u2018DMAddBoundary\u2019 from incompatible pointer type [-Wincompatible-pointer-types]\n   72 |   ierr = DMAddBoundary(dm, DM_BC_ESSENTIAL, \"wall\", \"marker\", 0, 0, NULL, (void (*)(void))NULL, NULL, 4, ids, &user); CHKERRQ(ierr);\n      |                                                                                                          ^~~\n      |                                                                                                          |\n      |                                                                                                          PetscInt * {aka int *}\n/petsc/include/petscdm.h:442:176: note: expected \u2018void (*)(void)\u2019 but argument is of type \u2018PetscInt *\u2019 {aka \u2018int *\u2019}\n  442 | PETSC_EXTERN PetscErrorCode DMAddBoundary(DM, DMBoundaryConditionType, const char[], DMLabel, PetscInt, const PetscInt[], PetscInt, PetscInt, const PetscInt[], PetscVoidFn *, PetscVoidFn *, void *, PetscInt *);\n      |                                                                                                                                                                                ^~~~~~~~~~~~~\nDarcyFlow2D_Steady.c:72:10: error: too few arguments to function \u2018DMAddBoundary\u2019\n   72 |   ierr = DMAddBoundary(dm, DM_BC_ESSENTIAL, \"wall\", \"marker\", 0, 0, NULL, (void (*)(void))NULL, NULL, 4, ids, &user); CHKERRQ(ierr);\n      |          ^~~~~~~~~~~~~\n/petsc/include/petscdm.h:442:29: note: declared here\n  442 | PETSC_EXTERN PetscErrorCode DMAddBoundary(DM, DMBoundaryConditionType, const char[], DMLabel, PetscInt, const PetscInt[], PetscInt, PetscInt, const PetscInt[], PetscVoidFn *, PetscVoidFn *, void *, PetscInt *);\n      |                             ^~~~~~~~~~~~~\nDarcyFlow2D_Steady.c:78:10: warning: implicit declaration of function \u2018DMPlexComputeResidualFEM\u2019; did you mean \u2018DMPlexSNESComputeResidualFEM\u2019? [-Wimplicit-function-declaration]\n   78 |   ierr = DMPlexComputeResidualFEM(dm, u, b, &user); CHKERRQ(ierr);\n      |          ^~~~~~~~~~~~~~~~~~~~~~~~\n      |          DMPlexSNESComputeResidualFEM\nDarcyFlow2D_Steady.c:80:10: warning: implicit declaration of function \u2018DMPlexComputeJacobianFEM\u2019; did you mean \u2018DMPlexTSComputeIJacobianFEM\u2019? [-Wimplicit-function-declaration]\n   80 |   ierr = DMPlexComputeJacobianFEM(dm, u, A, A, &user); CHKERRQ(ierr);\n      |          ^~~~~~~~~~~~~~~~~~~~~~~~\n      |          DMPlexTSComputeIJacobianFEM\nDarcyFlow2D_Steady.c:82:10: warning: implicit declaration of function \u2018KSPCreate\u2019; did you mean \u2018ISCreate\u2019? [-Wimplicit-function-declaration]\n   82 |   ierr = KSPCreate(PETSC_COMM_WORLD, &ksp); CHKERRQ(ierr);\n      |          ^~~~~~~~~\n      |          ISCreate\nDarcyFlow2D_Steady.c:83:10: warning: implicit declaration of function \u2018KSPSetOperators\u2019 [-Wimplicit-function-declaration]\n   83 |   ierr = KSPSetOperators(ksp, A, A); CHKERRQ(ierr);\n      |          ^~~~~~~~~~~~~~~\nDarcyFlow2D_Steady.c:84:10: warning: implicit declaration of function \u2018KSPSetFromOptions\u2019; did you mean \u2018DMSetFromOptions\u2019? [-Wimplicit-function-declaration]\n   84 |   ierr = KSPSetFromOptions(ksp); CHKERRQ(ierr);\n      |          ^~~~~~~~~~~~~~~~~\n      |          DMSetFromOptions\nDarcyFlow2D_Steady.c:85:10: warning: implicit declaration of function \u2018KSPSolve\u2019 [-Wimplicit-function-declaration]\n   85 |   ierr = KSPSolve(ksp, b, u); CHKERRQ(ierr);\n      |          ^~~~~~~~\nDarcyFlow2D_Steady.c:91:10: warning: implicit declaration of function \u2018KSPDestroy\u2019; did you mean \u2018ISDestroy\u2019? [-Wimplicit-function-declaration]\n   91 |   ierr = KSPDestroy(&ksp); CHKERRQ(ierr);\n      |          ^~~~~~~~~~\n      |          ISDestroy\nDarcyFlow2D_Steady.c:50:10: warning: unused variable \u2018fe_type\u2019 [-Wunused-variable]\n   50 |   FEType fe_type = PETSCFEBASIC;\n      |          ^~~~~~~\nmake: *** [/petsc/lib/petsc/conf/rules:218: DarcyFlow2D_Steady] Error 1\n",
+      "composite_score": 0.0,
+      "tier": "FAIL",
+      "category_scores": null,
+      "evaluation_summary": {
+        "error": "Exception with tool make: A nonzero returncode 2 from the tool"
+      },
+      "evaluation_details": null
+    },
+    {
+      "problem_name": "Robertson_ODE",
+      "problem_id": "1",
+      "runs": false,
+      "time_used_sec": 2.9239978790283203,
+      "compiles": false,
+      "stdout": null,
+      "stderr": null,
+      "cli_args": null,
+      "compile_stdout": null,
+      "compile_stderr": null,
+      "composite_score": 0.0,
+      "tier": "FAIL",
+      "category_scores": null,
+      "evaluation_summary": {
+        "error": "Could not parse purple agent response. Probably failed to generate the code."
+      },
+      "evaluation_details": null
+    },
+    {
+      "problem_name": "scatter_vecmpi",
+      "problem_id": "4",
+      "runs": true,
+      "time_used_sec": 8.28658127784729,
+      "compiles": true,
+      "stdout": "Gathered vector on rank 0:\nVec Object: 1 MPI process\n  type: seq\n2.\n4.\n6.\n8.\n10.\n12.\n14.\n16.\n18.\n20.\n",
+      "stderr": "",
+      "cli_args": "-N 10",
+      "compile_stdout": "/petsc/arch-linux-x64-opt/bin/mpicc -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -O2 -march=x86-64  -I/petsc/include -I/petsc/arch-linux-x64-opt/include     -Wl,-export-dynamic scatter_vecmpi.c   -Wl,-rpath,/petsc/arch-linux-x64-opt/lib -L/petsc/arch-linux-x64-opt/lib -lpetsc -lf2clapack -lf2cblas -lm -lX11 -lstdc++  -o scatter_vecmpi\n",
+      "compile_stderr": "scatter_vecmpi.c: In function \u2018main\u2019:\nscatter_vecmpi.c:6:36: warning: unused variable \u2018local_size\u2019 [-Wunused-variable]\n    6 |     PetscInt n = 10, i, low, high, local_size;\n      |                                    ^~~~~~~~~~\n",
+      "composite_score": 74.93079677652042,
+      "tier": "SILVER",
+      "category_scores": {
+        "correctness": 100.0,
+        "performance": 73.42683744430542,
+        "code_quality": 70.17241379310346,
+        "algorithm": 70.0,
+        "petsc": 78.9090909090909
+      },
+      "evaluation_summary": {
+        "total_evaluators": 14,
+        "passed_evaluators": 11,
+        "failed_evaluators": 2,
+        "all_gates_passed": true,
+        "gates_passed": 4,
+        "gates_total": 4
+      },
+      "evaluation_details": [
+        {
+          "name": "compilation",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code compiled successfully"
+        },
+        {
+          "name": "execution",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Code executed successfully"
+        },
+        {
+          "name": "memory_safety",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 0.7,
+          "feedback": "Basic memory safety check (valgrind not available)"
+        },
+        {
+          "name": "api_usage",
+          "type": "gate",
+          "method": "deterministic",
+          "passed": true,
+          "score": null,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "All basic PETSc API requirements met"
+        },
+        {
+          "name": "numerical_accuracy",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": true,
+          "score": 1.0,
+          "raw_value": 0.0,
+          "confidence": 1.0,
+          "feedback": "Excellent accuracy: error = 0.00e+00 (threshold: 1.00e-03)"
+        },
+        {
+          "name": "execution_time",
+          "type": "metric",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.7342683744430543,
+          "raw_value": 8.28658127784729,
+          "confidence": 1.0,
+          "feedback": "Acceptable performance: 8.287s (5.0s - 15.0s)"
+        },
+        {
+          "name": "error_handling",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": true,
+          "score": 0.8,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "Good error handling: 23 CHKERRQ calls"
+        },
+        {
+          "name": "parallel_awareness",
+          "type": "quality",
+          "method": "deterministic",
+          "passed": true,
+          "score": 1.0,
+          "raw_value": null,
+          "confidence": 0.8,
+          "feedback": "Parallel features: Uses PETSC_COMM_WORLD, Rank-aware code, Parallel-aware sizing"
+        },
+        {
+          "name": "readability",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.8,
+          "raw_value": null,
+          "confidence": 1.0,
+          "feedback": "The code is highly readable and follows standard PETSc idioms. It is well-structured with clear logical phases (initialization, computation, communication, and cleanup). The score is slightly reduced due to the use of legacy error handling macros and a minor inconsistency in how the sequential vector is handled across ranks."
+        },
+        {
+          "name": "code_style",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.7,
+          "raw_value": null,
+          "confidence": 0.95,
+          "feedback": "The code correctly uses PETSc types and function naming conventions, but it relies on the deprecated CHKERRQ macro and uses an outdated error handling style compared to modern PETSc standards (PetscCall)."
+        },
+        {
+          "name": "documentation",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": false,
+          "score": 0.6,
+          "raw_value": null,
+          "confidence": 0.95,
+          "feedback": "The code contains helpful inline comments that describe the high-level steps of the PETSc workflow. However, it lacks a formal header block for the main function, and there is no documentation regarding the expected command-line arguments (like -N) or the specific MPI environment requirements. While the logic is clear for a simple test, more complex sections like the VecScatter context creation could benefit from more detailed explanations of the parameters used."
+        },
+        {
+          "name": "algorithm_appropriateness",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": true,
+          "score": 0.7,
+          "raw_value": null,
+          "confidence": 0.95,
+          "feedback": "The approach correctly identifies the core PETSc components: VecCreate, VecSetValues, VecScale, and VecScatter. However, the implementation of the VecScatter is flawed. Specifically, the IS (Index Set) for the scatter is created using PETSC_COMM_SELF with the global size 'n' on all ranks, which will cause memory errors or crashes on non-zero ranks because they attempt to define a local index set larger than their local data. The standard PETSc idiom for gathering to rank 0 is to use VecScatterCreateToZero, which simplifies the logic significantly. Additionally, the code is truncated at the end."
+        },
+        {
+          "name": "solver_choice",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": null,
+          "score": null,
+          "raw_value": null,
+          "confidence": 0.0,
+          "feedback": "LLM evaluation failed: litellm.InternalServerError: litellm.InternalServerError: geminiException - {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"The model is overloaded. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
+        },
+        {
+          "name": "petsc_best_practices",
+          "type": "quality",
+          "method": "llm_gemini/gemini-3-flash-preview",
+          "passed": false,
+          "score": 0.6,
+          "raw_value": null,
+          "confidence": 0.95,
+          "feedback": "The code correctly uses VecSetFromOptions and PetscOptionsGetInt for basic runtime configurability. However, it fails to use PetscViewer for output (the code cuts off, but it was heading toward manual rank-based printing). It uses VecSetValues in a loop, which is correct but less efficient than VecSetValuesBlocked or VecGetArray for large local updates. The VecScatter logic is manually implemented; for gathering to rank 0, VecScatterCreateToZero is the preferred, more concise best practice. Additionally, the error handling uses the older CHKERRQ macro instead of the modern PetscCall."
+        }
+      ]
+    },
+    {
+      "problem_name": "NS2D_FV_Implicit",
+      "problem_id": "5",
+      "runs": false,
+      "time_used_sec": 14.278488636016846,
+      "compiles": true,
+      "stdout": "",
+      "stderr": "[0]PETSC ERROR: ------------------------------------------------------------------------\n[0]PETSC ERROR: Caught signal number 11 SEGV: Segmentation Violation, probably memory access out of range\n[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger\n[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/\n[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run \n[0]PETSC ERROR: to get more information on the crash.\n[0]PETSC ERROR: Run with -malloc_debug to check if memory corruption is causing the crash.\napplication called MPI_Abort(MPI_COMM_WORLD, 59) - process 0\n[unset]: PMIU_write error; fd=-1 buf=:cmd=abort exitcode=59 message=abort\n:\nsystem msg for write_line failure : Bad file descriptor\n",
+      "cli_args": "-ts_max_steps 10 -snes_atol 1e-6",
+      "compile_stdout": "/petsc/arch-linux-x64-opt/bin/mpicc -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -O2 -march=x86-64  -I/petsc/include -I/petsc/arch-linux-x64-opt/include     -Wl,-export-dynamic NS2D_FV_Implicit.c   -Wl,-rpath,/petsc/arch-linux-x64-opt/lib -L/petsc/arch-linux-x64-opt/lib -lpetsc -lf2clapack -lf2cblas -lm -lX11 -lstdc++  -o NS2D_FV_Implicit\n",
+      "compile_stderr": "NS2D_FV_Implicit.c: In function \u2018FormIFunction\u2019:\nNS2D_FV_Implicit.c:35:23: warning: passing argument 2 of \u2018DMDAVecGetArray\u2019 from incompatible pointer type [-Wincompatible-pointer-types]\n   35 |   DMDAVecGetArray(da, f, &f);\n      |                       ^\n      |                       |\n      |                       Field **\nIn file included from NS2D_FV_Implicit.c:7:\n/petsc/include/petscdmda.h:127:49: note: expected \u2018Vec\u2019 {aka \u2018struct _p_Vec *\u2019} but argument is of type \u2018Field **\u2019\n  127 | PETSC_EXTERN PetscErrorCode DMDAVecGetArray(DM, Vec, void *);\n      |                                                 ^~~\nNS2D_FV_Implicit.c:82:27: warning: passing argument 2 of \u2018DMDAVecRestoreArray\u2019 from incompatible pointer type [-Wincompatible-pointer-types]\n   82 |   DMDAVecRestoreArray(da, f, &f);\n      |                           ^\n      |                           |\n      |                           Field **\n/petsc/include/petscdmda.h:128:53: note: expected \u2018Vec\u2019 {aka \u2018struct _p_Vec *\u2019} but argument is of type \u2018Field **\u2019\n  128 | PETSC_EXTERN PetscErrorCode DMDAVecRestoreArray(DM, Vec, void *);\n      |                                                     ^~~\n",
+      "composite_score": 0.0,
+      "tier": "FAIL",
+      "category_scores": null,
+      "evaluation_summary": {
+        "error": "Exception with tool run_executable: A nonzero returncode 15 from the tool"
+      },
+      "evaluation_details": null
+    }
+  ]
+}
