@@ -1,8 +1,13 @@
 name: Run Benchmark
 
 on:
-  push:
   workflow_dispatch:
+    inputs:
+      config:
+        description: "Which matrix config to run"
+        type: choice
+        required: true
+        options: [gemini3, gpt52, all]
 
 jobs:
   run:
