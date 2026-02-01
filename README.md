@@ -14,6 +14,11 @@ A benchmarking framework for evaluating AI agents against the PetscAgent benchma
 
 > **⚠️ Warning:** Each benchmark run consumes a significant amount of LLM tokens. Monitor your API usage and costs accordingly.
 
+### Reproducibility
+
+Individual runs exhibit noticeable run-to-run variation. Extensive experiments indicate that this variability arises from inherent limitations of current LLMs.
+Even with the temperature set to 0, the same model still generates different code for identical prompts. In addition, some models, such as Gemini, suffer from stability issues and are frequently overloaded, further impacting reproducibility.
+
 ### Required Docker Images
 
 The benchmark uses the following Docker images from GitHub Container Registry:
