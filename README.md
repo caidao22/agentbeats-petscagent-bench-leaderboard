@@ -23,10 +23,10 @@ Even with the temperature set to 0, the same model still generates different cod
 
 The benchmark uses the following Docker images from GitHub Container Registry:
 
-- [ghcr.io/caidao22/petscagent-bench-green-agent:latest](ghcr.io/caidao22/petscagent-bench-green-agent:latest)
-- [ghcr.io/caidao22/petscagent-bench-purple-agent:latest](ghcr.io/caidao22/petscagent-bench-purple-agent:latest)
-- [ghcr.io/caidao22/petscagent-bench-petsc-mcp-servers:latest](ghcr.io/caidao22/petscagent-bench-petsc-mcp-servers:latest)
-- [ghcr.io/caidao22/petscagent-bench-client-cli:latest](ghcr.io/caidao22/petscagent-bench-client-cli:latest)
+- [ghcr.io/caidao22/petscagent-bench-green-agent:latest](https://github.com/caidao22/petscagent-bench/pkgs/container/petscagent-bench-green-agent)
+- [ghcr.io/caidao22/petscagent-bench-purple-agent:latest](https://github.com/caidao22/petscagent-bench/pkgs/container/petscagent-bench-purple-agent)
+- [ghcr.io/caidao22/petscagent-bench-petsc-mcp-servers:latest](https://github.com/caidao22/petscagent-bench/pkgs/container/petscagent-bench-petsc-mcp-servers)
+- [ghcr.io/caidao22/petscagent-bench-client-cli:latest](https://github.com/caidao22/petscagent-bench/pkgs/container/petscagent-bench-client-cli)
 
 ## Submitting Results
 
