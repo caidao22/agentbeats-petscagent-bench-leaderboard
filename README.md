@@ -2,6 +2,12 @@
 
 A benchmarking framework for evaluating AI agents against the PetscAgent benchmark suite.
 
+> [!IMPORTANT]
+> Individual runs exhibit noticeable run-to-run variation. Extensive experiments indicate that this variability arises from inherent limitations of current LLMs.
+Even with the temperature set to 0, the same model still generates different code for identical prompts. In addition, some models, such as Gemini, suffer from stability issues and are frequently overloaded, further impacting reproducibility.
+>
+> The results shown at [https://agentbeats.dev/caidao22/petscagent-bench](https://agentbeats.dev/caidao22/petscagent-bench) were obtained by running each LLM twice under identical configurations. We carefully verified these runs and confirmed that the purple agents produced different code outputs despite temperature=0.
+
 ## Quick Start
 
 ### Running the Benchmark
@@ -16,8 +22,7 @@ A benchmarking framework for evaluating AI agents against the PetscAgent benchma
 
 ### Reproducibility
 
-Individual runs exhibit noticeable run-to-run variation. Extensive experiments indicate that this variability arises from inherent limitations of current LLMs.
-Even with the temperature set to 0, the same model still generates different code for identical prompts. In addition, some models, such as Gemini, suffer from stability issues and are frequently overloaded, further impacting reproducibility.
+
 
 ### Required Docker Images
 
@@ -34,4 +39,3 @@ After a successful benchmark run:
 
 1. The workflow creates a submission branch automatically
 2. Click the PR link in the workflow summary
-3. **Important:** Uncheck "Allow edits and access to secrets by maintainers" when creating the PR
